@@ -7,7 +7,7 @@ from app.models.product import Product
 
 
 class CreateCart(BaseModel):
-    product : Product
+    product : Product 
 
 
 class Cart(SQLModel, table=True):
