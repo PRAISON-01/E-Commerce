@@ -1,8 +1,24 @@
-from pydantic import EmailStr
-from pydantic.v1 import BaseModel
+from uuid import UUID, uuid4
+
+from pydantic import EmailStr, Field, BaseModel
+from sqlmodel import SQLModel, Field as SQLField
 
 
 class RegisterStoreKeeper(BaseModel):
     name : str
     email : EmailStr
-    
+    password : str = Field(..., min_length=8, max_length=20)
+
+class LoginStoreKeeper(BaseModel):
+    email : EmailStr
+    password : str = Field(min_length=8, max_length=20)
+
+class LogOutStoreKeeper(BaseModel):
+    email : EmailStr
+
+
+class StoreKeeper(SQLModel, table=True):
+    id: UUID = SQLField(default_factory=uuid4, primary_key=True)
+    name: str = Field(min_length=3, max_length=20)
+    email: EmailStr = SQLField(unique=True, index=True)
+    password: str = Field(..., min_length=8, max_length=20)
