@@ -1,4 +1,4 @@
-from uuid import UUID
+from uuid import UUID, uuid4
 
 from pydantic import BaseModel
 from sqlmodel import SQLModel, Field as SQLField
@@ -11,7 +11,7 @@ class CreateCart(BaseModel):
 
 
 class Cart(SQLModel, table=True):
-    id : UUID =SQLField(default=None, primary_key=True)
+    id : UUID =SQLField(default_factory=uuid4, primary_key=True)
     products: list[Product]
     total_amount: float
     quantity: int

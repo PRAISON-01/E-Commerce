@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="feat(models): Updated And Completed the Models">
+      <change afterPath="$PROJECT_DIR$/app/repositories/customer_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/storekeeper_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tests/repositories/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tests/repositories/test_customer_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tests/repositories/test_storekeeper_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/E-Commerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/E-Commerce.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/customer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/invoice.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/invoice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/product.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/dummy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +44,12 @@
     &quot;assignee&quot;: &quot;PRAISON-01&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/PRAISON-01/E-Commerce&quot;,
-    &quot;accountId&quot;: &quot;b9dfa56d-3e3b-41a2-9b0d-76166f7f8402&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/PRAISON-01/E-Commerce",
+    "accountId": "82994b6f-71ed-4b2b-9f1a-4f66390196ce"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1,
   &quot;fromUser&quot;: false
@@ -48,13 +62,18 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests in test_customer_repository.py.executor": "Run",
+    "Python tests.Python tests in test_storekeeper_repository.py.executor": "Run",
+    "Python.customer_repository.executor": "Run",
+    "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "praise__branch",
+    "git-widget-placeholder": "features/Auth",
+    "last_opened_file_path": "/home/aramide/Documents/E-Commerce",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
