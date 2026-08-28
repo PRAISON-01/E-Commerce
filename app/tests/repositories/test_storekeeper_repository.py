@@ -12,7 +12,6 @@ test_engine = create_engine(
     connect_args={"check_same_thread": False}
 )
 
-
 class TestStoreKeeperRepository:
 
     @pytest.fixture

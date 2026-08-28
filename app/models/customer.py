@@ -22,4 +22,9 @@ class LoginCustomer(BaseModel):
 class LogoutCustomer(BaseModel):
     email: EmailStr
 
+class CustomerResponse(BaseModel):
+    id: UUID
+    name: str
+    email: EmailStr
 
+    model_config = {"from_attributes": True}
