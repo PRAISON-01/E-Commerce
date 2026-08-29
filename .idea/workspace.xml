@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="feat(models): Updated And Completed the Models">
-      <change beforePath="$PROJECT_DIR$/.idea/E-Commerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/E-Commerce.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/pyProjectModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/customer_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/customer_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/repositories/test_customer_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/repositories/test_customer_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/repositories/test_storekeeper_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/repositories/test_storekeeper_repository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,35 +49,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests in Auth_service_test.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_auth_service.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_customer_repository.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_router.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_storekeeper_repository.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.auth_router.executor&quot;: &quot;Run&quot;,
-    &quot;Python.customer_repository.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#5 on features/Auth&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/aramide/Documents/E-Commerce&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests for tests.repositories.test_customer_repository.TestCustomerRepository.test_save_then_update_existing_customer.executor": "Run",
+    "Python tests.Python tests for tests.repositories.test_storekeeper_repository.TestStoreKeeperRepository.test_save_then_update_existing_customer.executor": "Run",
+    "Python tests.Python tests in Auth_service_test.py.executor": "Run",
+    "Python tests.Python tests in test_auth_service.py.executor": "Run",
+    "Python tests.Python tests in test_customer_repository.py.executor": "Run",
+    "Python tests.Python tests in test_router.py.executor": "Run",
+    "Python tests.Python tests in test_storekeeper_repository.py.executor": "Run",
+    "Python.auth_router.executor": "Run",
+    "Python.customer_repository.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "feature/modifications",
+    "last_opened_file_path": "/home/aramide/Documents/E-Commerce",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;TEXT&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/config" />
@@ -106,6 +111,46 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for tests.repositories.test_customer_repository.TestCustomerRepository.test_save_then_update_existing_customer" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="E-Commerce" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.repositories.test_customer_repository.TestCustomerRepository.test_save_then_update_existing_customer&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.repositories.test_storekeeper_repository.TestStoreKeeperRepository.test_save_then_update_existing_customer" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="E-Commerce" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.repositories.test_storekeeper_repository.TestStoreKeeperRepository.test_save_then_update_existing_customer&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for tests.repositories.test_storekeeper_repository.TestStoreKeeperRepository.test_save_then_update_existing_customer" />
+        <item itemvalue="Python tests.Python tests for tests.repositories.test_customer_repository.TestCustomerRepository.test_save_then_update_existing_customer" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
