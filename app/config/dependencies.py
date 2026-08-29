@@ -1,10 +1,7 @@
-from typing import Generator
-
 from sqlmodel import Session
 
-from config.database import engine
+from app.config import engine
 
-
-def get_session() -> Generator[Session, None, None]:
+def get_session():
     with Session(engine) as session:
         yield session

@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="feat(models): Updated And Completed the Models">
-      <change afterPath="$PROJECT_DIR$/app/exception/auth_exception.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/order.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/auth_router.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/auth_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/tests/routers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/tests/routers/test_router.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/tests/services_tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/tests/services_tests/test_auth_service.py" afterDir="false" />
+    <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="feat(models): Tested Product Model , updated and Add&#10;updated(doc):  database and dependencies documentation&#10;&#10;fix(folder structure): renamed and rearranged folder structure">
+      <change afterPath="$PROJECT_DIR$/app/services/inventory_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tests/repositories/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tests/repositories/test_product_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tests/services/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tests/services/test_inventory_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/E-Commerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/E-Commerce.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/dependencies.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/dependencies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/exception/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/customer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/store_keeper.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/store_keeper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tests/repositories/test_storekeeper_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/repositories/test_storekeeper_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/product.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/dummy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/models/test_product_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/models/test_product_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +44,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/PRAISON-01/E-Commerce&quot;,
-    &quot;accountId&quot;: &quot;82994b6f-71ed-4b2b-9f1a-4f66390196ce&quot;
+    &quot;accountId&quot;: &quot;b9dfa56d-3e3b-41a2-9b0d-76166f7f8402&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -65,22 +59,26 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.Python tests in Auth_service_test.py.executor": "Run",
-    "Python tests.Python tests in test_auth_service.py.executor": "Run",
-    "Python tests.Python tests in test_customer_repository.py.executor": "Run",
-    "Python tests.Python tests in test_router.py.executor": "Run",
-    "Python tests.Python tests in test_storekeeper_repository.py.executor": "Run",
-    "Python.auth_router.executor": "Run",
-    "Python.customer_repository.executor": "Run",
-    "Python.main.executor": "Run",
+    "Python tests.Python tests for app.tests.repositories.test_product_repository.TestProductRepository.test_save_products_and_find_by_id.executor": "Run",
+    "Python tests.Python tests for tests.models.test_product_model.TestProductModel.executor": "Run",
+    "Python tests.Python tests for tests.models.test_product_model.TestProductModel.test_product_with_invalid_name_.executor": "Run",
+    "Python tests.Python tests for tests.models.test_product_model.TestUpdateProduct.executor": "Run",
+    "Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.executor": "Run",
+    "Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.test_save_products_and_find_by_id.executor": "Run",
+    "Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_count_increases_by_one.executor": "Run",
+    "Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_saved_product_find_by_id_returns_product.executor": "Run",
+    "Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_saved_product_id_is_created.executor": "Run",
+    "Python tests.Python tests for tests.repositories.test_product_repository.test_save_products_and_find_by_id.executor": "Run",
+    "Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService.executor": "Run",
+    "Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService.test_increase_stock.executor": "Run",
+    "Python tests.Python tests in test_product_model.py.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "features/Auth",
-    "last_opened_file_path": "/home/aramide/Documents/E-Commerce",
+    "git-widget-placeholder": "praise__branch",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
@@ -93,10 +91,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/config" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="E-Commerce" />
       <option name="ENV_FILES" value="" />
@@ -122,6 +121,105 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_count_increases_by_one" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="E-Commerce" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_count_increases_by_one&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_saved_product_find_by_id_returns_product" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="E-Commerce" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_saved_product_find_by_id_returns_product&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_saved_product_id_is_created" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="E-Commerce" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_saved_product_id_is_created&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.services.test_inventory_service.TestInventoryService" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="E-Commerce" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.services.test_inventory_service.TestInventoryService&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.services.test_inventory_service.TestInventoryService.test_increase_stock" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="E-Commerce" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.services.test_inventory_service.TestInventoryService.test_increase_stock&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService" />
+        <item itemvalue="Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService.test_increase_stock" />
+        <item itemvalue="Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_saved_product_find_by_id_returns_product" />
+        <item itemvalue="Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_saved_product_id_is_created" />
+        <item itemvalue="Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_count_increases_by_one" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -141,6 +239,13 @@
       <workItem from="1787765966324" duration="169000" />
       <workItem from="1787766221982" duration="850000" />
       <workItem from="1787769475304" duration="6897000" />
+      <workItem from="1787815880321" duration="1927000" />
+      <workItem from="1787822064102" duration="20000" />
+      <workItem from="1787822426342" duration="292000" />
+      <workItem from="1787838643233" duration="240000" />
+      <workItem from="1787841623090" duration="20021000" />
+      <workItem from="1787925605082" duration="325000" />
+      <workItem from="1787997590323" duration="3048000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -174,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1787796501744</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat(models): Tested Product Model , updated and Add&#10;updated(doc):  database and dependencies documentation&#10;&#10;fix(folder structure): renamed and rearranged folder structure">
+      <option name="closed" value="true" />
+      <created>1787804043142</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1787804043142</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +335,10 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="testing with customer model" />
     <MESSAGE value="feat(models): Updated And Completed the Models" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(models): Updated And Completed the Models" />
+    <MESSAGE value="feat(models): Tested Product Model , updated and Add&#10;updated(doc):  database and dependencies documentation&#10;&#10;fix(folder structure): renamed and rearranged folder structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(models): Tested Product Model , updated and Add&#10;updated(doc):  database and dependencies documentation&#10;&#10;fix(folder structure): renamed and rearranged folder structure" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/E_Commerce$.coverage" NAME=" Coverage Results" MODIFIED="1788000402724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
   </component>
 </project>
