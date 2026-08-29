@@ -22,3 +22,9 @@ class StoreKeeper(SQLModel, table=True):
     name: str = Field(min_length=3, max_length=20)
     email: EmailStr = SQLField(unique=True, index=True)
     password: str = Field(..., min_length=8, max_length=20)
+
+class StoreKeeperResponse(BaseModel):
+    id: UUID
+    name: str
+    email: EmailStr
+    model_config = {"from_attributes": True}

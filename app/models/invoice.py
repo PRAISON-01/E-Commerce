@@ -1,4 +1,4 @@
-import datetime
+from _pydatetime import datetime
 from enum import Enum
 from typing import List
 from uuid import UUID
