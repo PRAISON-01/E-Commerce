@@ -14,13 +14,17 @@ class RegisterCustomer(BaseModel):
     name: str = Field(..., min_length=3, max_length=20)
     email: EmailStr
     password: str = Field(..., min_length = 8, max_length = 20)
-    phone_number: str
 
 class LoginCustomer(BaseModel):
-    email: str
+    email: EmailStr
     password: str
 
 class LogoutCustomer(BaseModel):
-    email: str
+    email: EmailStr
 
+class CustomerResponse(BaseModel):
+    id: UUID
+    name: str
+    email: EmailStr
 
+    model_config = {"from_attributes": True}
