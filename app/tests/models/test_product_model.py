@@ -1,8 +1,7 @@
 import pytest
 from pydantic import ValidationError
-from sqlalchemy.orm import descriptor_props
 
-from models.product import AddProduct, UpdateProduct
+from app.models.product import AddProduct, UpdateProduct
 
 
 class TestProductModel:

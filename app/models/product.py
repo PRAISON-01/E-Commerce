@@ -18,7 +18,7 @@ class UpdateProduct(BaseModel):
     quantity : int | None = Field (gt=0)
 
 class Product(SQLModel, table=True):
-    id : UUID = SQLField(default_factory=uuid, primary_key=True)
+    id : UUID = SQLField(default_factory=uuid.uuid4, primary_key=True)
     name: str = Field( min_length=3, max_length=100)
     description: str = Field( default=None, min_length=3, max_length=100)
     price: float
