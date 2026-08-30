@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="update(model) : cart models and test&#10;update(model) : cart repository&#10;&#10;fix(router) : fixed the router and environment to run fastAPI in">
+    <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="feat(models): Updated And Completed the Models">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tests/models/test_cart_modesl.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/models/test_cart_modesl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/customer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/store_keeper.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/store_keeper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/auth_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/auth_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/auth_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/auth_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/routers/test_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/routers/test_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/services_tests/test_auth_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/services_tests/test_auth_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="features/Auth" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,7 +39,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/PRAISON-01/E-Commerce&quot;,
-    &quot;accountId&quot;: &quot;b9dfa56d-3e3b-41a2-9b0d-76166f7f8402&quot;
+    &quot;accountId&quot;: &quot;82994b6f-71ed-4b2b-9f1a-4f66390196ce&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -49,34 +54,35 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.Python tests for app.tests.repositories.test_product_repository.TestProductRepository.test_save_products_and_find_by_id.executor": "Run",
-    "Python tests.Python tests for tests.models.test_cart_modesl.TestCartModel.executor": "Run",
-    "Python tests.Python tests for tests.models.test_product_model.TestProductModel.executor": "Run",
-    "Python tests.Python tests for tests.models.test_product_model.TestProductModel.test_product_with_invalid_description_.executor": "Run",
-    "Python tests.Python tests for tests.models.test_product_model.TestProductModel.test_product_with_invalid_name_.executor": "Run",
-    "Python tests.Python tests for tests.models.test_product_model.TestUpdateProduct.executor": "Run",
-    "Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.executor": "Run",
-    "Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.test_save_products_and_find_by_id.executor": "Run",
-    "Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_count_increases_by_one.executor": "Run",
-    "Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_saved_product_find_by_id_returns_product.executor": "Run",
-    "Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_saved_product_id_is_created.executor": "Run",
-    "Python tests.Python tests for tests.repositories.test_product_repository.test_save_products_and_find_by_id.executor": "Run",
-    "Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService.executor": "Run",
-    "Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService.test_increase_stock.executor": "Run",
-    "Python tests.Python tests in models.executor": "Run",
-    "Python tests.Python tests in test_cart_modesl.py.executor": "Run",
-    "Python tests.Python tests in test_cart_repository.py.executor": "Run",
+    "Python tests.Python tests for tests.repositories.test_customer_repository.TestCustomerRepository.test_save_then_update_existing_customer.executor": "Run",
+    "Python tests.Python tests for tests.repositories.test_storekeeper_repository.TestStoreKeeperRepository.test_save_then_update_existing_customer.executor": "Run",
+    "Python tests.Python tests for tests.routers.test_router.TestAuthRouter.test_logout_customer.executor": "Run",
+    "Python tests.Python tests for tests.routers.test_router.TestAuthRouter.test_logout_customer_fails_when_customer_does_not_exist.executor": "Run",
+    "Python tests.Python tests for tests.routers.test_router.TestAuthRouter.test_register_customer.executor": "Run",
+    "Python tests.Python tests for tests.services_tests.test_auth_service.TestAuthService.test_login_customer.executor": "Run",
+    "Python tests.Python tests for tests.services_tests.test_auth_service.TestAuthService.test_login_customer_persists_logged_in_state.executor": "Run",
+    "Python tests.Python tests for tests.services_tests.test_auth_service.TestAuthService.test_login_storekeeper.executor": "Run",
+    "Python tests.Python tests for tests.services_tests.test_auth_service.TestAuthService.test_login_storekeeper_persists_logged_in_state.executor": "Run",
+    "Python tests.Python tests for tests.services_tests.test_auth_service.TestAuthService.test_logout_customer.executor": "Run",
+    "Python tests.Python tests for tests.services_tests.test_auth_service.TestAuthService.test_logout_customer_raises_exception_when_customer_does_not_exist.executor": "Run",
+    "Python tests.Python tests for tests.services_tests.test_auth_service.TestAuthService.test_logout_storekeeper.executor": "Run",
+    "Python tests.Python tests for tests.services_tests.test_auth_service.TestAuthService.test_logout_storekeeper_raises_exception_when_storekeeper_does_not_exist.executor": "Run",
+    "Python tests.Python tests in Auth_service_test.py.executor": "Run",
+    "Python tests.Python tests in test_auth_service.py.executor": "Run",
     "Python tests.Python tests in test_customer_repository.py.executor": "Run",
-    "Python tests.Python tests in test_product_model.py.executor": "Run",
-    "Python tests.Python tests in test_product_repository.py.executor": "Run",
-    "Python tests.Python tests in tests.executor": "Run",
+    "Python tests.Python tests in test_router.py.executor": "Run",
+    "Python tests.Python tests in test_storekeeper_repository.py.executor": "Run",
+    "Python.auth_router.executor": "Run",
+    "Python.customer_repository.executor": "Run",
+    "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "features/cart__repository",
+    "git-widget-placeholder": "feature/modifications",
+    "last_opened_file_path": "/home/aramide/Documents/E-Commerce",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
@@ -89,7 +95,6 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/config" />
     </key>
   </component>
@@ -119,103 +124,98 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.models.test_cart_modesl.TestCartModel" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.routers.test_router.TestAuthRouter.test_logout_customer" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="E-Commerce" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="DEBUG_JUST_MY_CODE" value="false" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.models.test_cart_modesl.TestCartModel&quot;" />
+      <option name="_new_target" value="&quot;tests.routers.test_router.TestAuthRouter.test_logout_customer&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.models.test_product_model.TestProductModel" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.routers.test_router.TestAuthRouter.test_logout_customer_fails_when_customer_does_not_exist" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="E-Commerce" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="DEBUG_JUST_MY_CODE" value="false" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.models.test_product_model.TestProductModel&quot;" />
+      <option name="_new_target" value="&quot;tests.routers.test_router.TestAuthRouter.test_logout_customer_fails_when_customer_does_not_exist&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.models.test_product_model.TestProductModel.test_product_with_invalid_description_" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.routers.test_router.TestAuthRouter.test_register_customer" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="E-Commerce" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="DEBUG_JUST_MY_CODE" value="false" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.models.test_product_model.TestProductModel.test_product_with_invalid_description_&quot;" />
+      <option name="_new_target" value="&quot;tests.routers.test_router.TestAuthRouter.test_register_customer&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in models" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.services_tests.test_auth_service.TestAuthService.test_logout_storekeeper" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="E-Commerce" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/tests/models" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="DEBUG_JUST_MY_CODE" value="false" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/app/tests/models&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;tests.services_tests.test_auth_service.TestAuthService.test_logout_storekeeper&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_cart_repository.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.services_tests.test_auth_service.TestAuthService.test_logout_storekeeper_raises_exception_when_storekeeper_does_not_exist" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="E-Commerce" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="DEBUG_JUST_MY_CODE" value="false" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/app/tests/repositories/test_cart_repository.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;tests.services_tests.test_auth_service.TestAuthService.test_logout_storekeeper_raises_exception_when_storekeeper_does_not_exist&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for tests.models.test_product_model.TestProductModel" />
-        <item itemvalue="Python tests.Python tests in models" />
-        <item itemvalue="Python tests.Python tests for tests.models.test_cart_modesl.TestCartModel" />
-        <item itemvalue="Python tests.Python tests for tests.models.test_product_model.TestProductModel.test_product_with_invalid_description_" />
-        <item itemvalue="Python tests.Python tests in test_cart_repository.py" />
+        <item itemvalue="Python tests.Python tests for tests.routers.test_router.TestAuthRouter.test_register_customer" />
+        <item itemvalue="Python tests.Python tests for tests.routers.test_router.TestAuthRouter.test_logout_customer_fails_when_customer_does_not_exist" />
+        <item itemvalue="Python tests.Python tests for tests.routers.test_router.TestAuthRouter.test_logout_customer" />
+        <item itemvalue="Python tests.Python tests for tests.services_tests.test_auth_service.TestAuthService.test_logout_storekeeper_raises_exception_when_storekeeper_does_not_exist" />
+        <item itemvalue="Python tests.Python tests for tests.services_tests.test_auth_service.TestAuthService.test_logout_storekeeper" />
       </list>
     </recent_temporary>
   </component>
@@ -237,14 +237,6 @@
       <workItem from="1787765966324" duration="169000" />
       <workItem from="1787766221982" duration="850000" />
       <workItem from="1787769475304" duration="6897000" />
-      <workItem from="1787815880321" duration="1927000" />
-      <workItem from="1787822064102" duration="20000" />
-      <workItem from="1787822426342" duration="292000" />
-      <workItem from="1787838643233" duration="240000" />
-      <workItem from="1787841623090" duration="20021000" />
-      <workItem from="1787925605082" duration="325000" />
-      <workItem from="1787997590323" duration="3048000" />
-      <workItem from="1788066347517" duration="18154000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -278,23 +270,7 @@
       <option name="project" value="LOCAL" />
       <updated>1787796501744</updated>
     </task>
-    <task id="LOCAL-00005" summary="feat(models): Tested Product Model , updated and Add&#10;updated(doc):  database and dependencies documentation&#10;&#10;fix(folder structure): renamed and rearranged folder structure">
-      <option name="closed" value="true" />
-      <created>1787804043142</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1787804043142</updated>
-    </task>
-    <task id="LOCAL-00006" summary="update(model) : cart models and test&#10;update(model) : cart repository&#10;&#10;fix(router) : fixed the router and environment to run fastAPI in">
-      <option name="closed" value="true" />
-      <created>1788109465457</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1788109465457</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,21 +318,9 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="testing with customer model" />
     <MESSAGE value="feat(models): Updated And Completed the Models" />
-    <MESSAGE value="feat(models): Tested Product Model , updated and Add&#10;updated(doc):  database and dependencies documentation&#10;&#10;fix(folder structure): renamed and rearranged folder structure" />
-    <MESSAGE value="update(model) : cart models and test&#10;update(model) : cart repository&#10;&#10;fix(router) : fixed the router and environment to run fastAPI in" />
-    <option name="LAST_COMMIT_MESSAGE" value="update(model) : cart models and test&#10;update(model) : cart repository&#10;&#10;fix(router) : fixed the router and environment to run fastAPI in" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/config/database.py</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="feat(models): Updated And Completed the Models" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/E_Commerce$.coverage" NAME=" Coverage Results" MODIFIED="1788111467507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+    <SUITE FILE_PATH="coverage/E_Commerce$.coverage" NAME=" Coverage Results" MODIFIED="1788000402724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
   </component>
 </project>
