@@ -1,10 +1,10 @@
 import pytest
-from sqlalchemy import create_engine, StaticPool
-from sqlmodel import SQLModel, Session
+from sqlalchemy import StaticPool
+from sqlmodel import SQLModel, Session, create_engine
 
-from models.cart import Cart, CartItem
+from models.customer import Customer
 from models.product import Product
-
+from models.cart import Cart, CartItem
 class TestCartModel:
     @pytest.fixture
     def db_session(self):
