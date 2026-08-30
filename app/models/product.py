@@ -2,7 +2,7 @@ import uuid
 from uuid import UUID
 
 from pydantic import BaseModel, Field
-from sqlmodel import SQLModel, Field as SQLField
+from sqlmodel import SQLModel, Field as SQLField, Relationship
 
 
 class AddProduct(BaseModel):
@@ -18,11 +18,13 @@ class UpdateProduct(BaseModel):
     quantity : int | None = Field (gt=0)
 
 class Product(SQLModel, table=True):
+    __tablename__ = "products"
     id : UUID = SQLField(default_factory=uuid.uuid4, primary_key=True)
     name: str = Field( min_length=3, max_length=100)
     description: str = Field( default=None, min_length=3, max_length=100)
     price: float
     quantity: int
 
+    cart_items: list["CartItem"] = Relationship(back_populates="product")
 
 
