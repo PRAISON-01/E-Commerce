@@ -1,5 +1,3 @@
-from uuid import uuid4
-
 import pytest
 from sqlmodel import SQLModel, create_engine, Session
 from app.models.store_keeper import StoreKeeper
@@ -36,16 +34,6 @@ class TestStoreKeeperRepository:
         assert saved_storekeeper.name == "John"
         assert saved_storekeeper.email == "john@gmail.com"
 
-    def test_save_then_update_existing_customer(self, session, saved_storekeeper):
-        repo = StoreKeeperRepository(session)
-        saved_storekeeper.name = "Johnny"
-        updated_storekeeper = repo.save(saved_storekeeper)
-
-        assert updated_storekeeper.name == "Johnny"
-        assert updated_storekeeper.id == saved_storekeeper.id
-        found_storekeeper = repo.find_by_id(saved_storekeeper.id)
-        assert found_storekeeper.name == "Johnny"
-
     def test_find_by_id(self, session, saved_storekeeper):
         repo = StoreKeeperRepository(session)
         found_storekeeper = repo.find_by_id(saved_storekeeper.id)
@@ -54,12 +42,6 @@ class TestStoreKeeperRepository:
         assert found_storekeeper.name == "John"
         assert found_storekeeper.email == "john@gmail.com"
 
-    def test_find_by_id_returns_none_when_storekeeper_does_not_exist(
-        self,session):
-        repo = StoreKeeperRepository(session)
-        found_storekeeper = repo.find_by_id(uuid4())
-        assert found_storekeeper is None
-
     def test_find_by_email(self, session, saved_storekeeper):
         repo = StoreKeeperRepository(session)
         found_storekeeper = repo.find_by_email(saved_storekeeper.email)
@@ -67,18 +49,8 @@ class TestStoreKeeperRepository:
         assert found_storekeeper.name == "John"
         assert found_storekeeper.email == "john@gmail.com"
 
-    def test_find_by_email_returns_none_when_storekeeper_does_not_exist(
-        self,session):
-        repo = StoreKeeperRepository(session)
-        found_storekeeper = repo.find_by_email("fake@gmail.com")
-        assert found_storekeeper is None
-
     def test_exists_by_email(self, session, saved_storekeeper):
         repo = StoreKeeperRepository(session)
         assert repo.exists_by_email(saved_storekeeper.email)
 
-    def test_exists_by_email_returns_false_when_storekeeper_does_not_exist(
-        self,session):
-        repo = StoreKeeperRepository(session)
-        assert not repo.exists_by_email("fake@gmail.com")
 

@@ -50,40 +50,31 @@ class TestAuthRouter:
 
         payload = {"name": "Another John", "email": "john@gmail.com", "password": "another-password"}
         response = client.post("/auth/customers/register", json=payload)
-
         assert response.status_code == 409
         assert "already exists" in response.json()["detail"]
 
     def test_login_customer(self, client):
         client.post("/auth/customers/register", json={
-            "name": "John", "email": "john@gmail.com", "password": "test-password"
-        })
+            "name": "John", "email": "john@gmail.com", "password": "test-password"})
 
         response = client.post("/auth/customers/login", json={
-            "email": "john@gmail.com", "password": "test-password"
-        })
-
+            "email": "john@gmail.com", "password": "test-password"})
         assert response.status_code == 200
         body = response.json()
         assert body["email"] == "john@gmail.com"
 
     def test_login_customer_fails_when_email_does_not_exist(self, client):
         response = client.post("/auth/customers/login", json={
-            "email": "fake@gmail.com", "password": "test-password"
-        })
-
+            "email": "fake@gmail.com", "password": "test-password"})
         assert response.status_code == 401
         assert response.json()["detail"] == "Invalid email or password"
 
     def test_login_customer_fails_when_password_is_wrong(self, client):
         client.post("/auth/customers/register", json={
-            "name": "John", "email": "john@gmail.com", "password": "test-password"
-        })
+            "name": "John", "email": "john@gmail.com", "password": "test-password"})
 
         response = client.post("/auth/customers/login", json={
-            "email": "john@gmail.com", "password": "wrong-password"
-        })
-
+            "email": "john@gmail.com", "password": "wrong-password"})
         assert response.status_code == 401
         assert response.json()["detail"] == "Invalid email or password"
 
@@ -102,30 +93,23 @@ class TestAuthRouter:
 
         payload = {"name": "Another Mike", "email": "mike@gmail.com", "password": "another-password"}
         response = client.post("/auth/storekeepers/register", json=payload)
-
         assert response.status_code == 409
         assert "already exists" in response.json()["detail"]
 
     def test_login_storekeeper(self, client):
         client.post("/auth/storekeepers/register", json={
-            "name": "Mike", "email": "mike@gmail.com", "password": "test-password"
-        })
+            "name": "Mike", "email": "mike@gmail.com", "password": "test-password"})
 
         response = client.post("/auth/storekeepers/login", json={
-            "email": "mike@gmail.com", "password": "test-password"
-        })
-
+            "email": "mike@gmail.com", "password": "test-password"})
         assert response.status_code == 200
         assert response.json()["email"] == "mike@gmail.com"
 
     def test_login_storekeeper_fails_when_password_is_wrong(self, client):
         client.post("/auth/storekeepers/register", json={
-            "name": "Mike", "email": "mike@gmail.com", "password": "test-password"
-        })
+            "name": "Mike", "email": "mike@gmail.com", "password": "test-password"})
 
         response = client.post("/auth/storekeepers/login", json={
-            "email": "mike@gmail.com", "password": "wrong-password"
-        })
-
+            "email": "mike@gmail.com", "password": "wrong-password"})
         assert response.status_code == 401
         assert response.json()["detail"] == "Invalid email or password"
