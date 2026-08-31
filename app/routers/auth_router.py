@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session
 
-from config.dependencies import get_session
+from app.config.dependencies import get_session
 from app.exception import AuthenticationException
 from app.repositories.customer_repository import CustomerRepository
 from app.repositories.storekeeper_repository import StoreKeeperRepository
