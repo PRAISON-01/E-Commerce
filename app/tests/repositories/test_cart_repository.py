@@ -6,7 +6,7 @@ from sqlmodel import SQLModel, Session
 
 from models.product import Product
 from models.cart import Cart, CartItem
-from repositories.cart_repository import CartRepository
+from app.repositories.cart_repository import CartRepository
 
 
 class TestCartRepository:

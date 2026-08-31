@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="update(model) : cart models and test&#10;update(model) : cart repository&#10;&#10;fix(router) : fixed the router and environment to run fastAPI in">
-      <change afterPath="$PROJECT_DIR$/app/routers/inventory_router.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/cart_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/cart_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/store_keeper.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/store_keeper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/repositories/product_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/product_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/storekeeper_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/storekeeper_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/inventory_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/inventory_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/repositories/test_cart_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/repositories/test_cart_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/services/test_inventory_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/services/test_inventory_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="features/cart_repository" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,6 +60,7 @@
     "Python tests.Python tests for tests.models.test_product_model.TestProductModel.test_product_with_invalid_description_.executor": "Run",
     "Python tests.Python tests for tests.models.test_product_model.TestProductModel.test_product_with_invalid_name_.executor": "Run",
     "Python tests.Python tests for tests.models.test_product_model.TestUpdateProduct.executor": "Run",
+    "Python tests.Python tests for tests.repositories.test_cart_repository.TestCartRepository.executor": "Run",
     "Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.executor": "Run",
     "Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.test_save_products_and_find_by_id.executor": "Run",
     "Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository.test_that_save_product_count_increases_by_one.executor": "Run",
@@ -68,6 +69,8 @@
     "Python tests.Python tests for tests.repositories.test_product_repository.test_save_products_and_find_by_id.executor": "Run",
     "Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService.executor": "Run",
     "Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService.test_increase_stock.executor": "Run",
+    "Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService.test_that_add_product_require_store_keeper_logged.executor": "Run",
+    "Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService.test_that_delete_product_deletes_product.executor": "Run",
     "Python tests.Python tests in models.executor": "Run",
     "Python tests.Python tests in test_cart_modesl.py.executor": "Run",
     "Python tests.Python tests in test_cart_repository.py.executor": "Run",
@@ -81,7 +84,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "features/inventory__service",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
@@ -98,7 +101,7 @@
       <recent name="$PROJECT_DIR$/app/config" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService.test_that_add_product_require_store_keeper_logged">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="E-Commerce" />
       <option name="ENV_FILES" value="" />
@@ -124,7 +127,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.models.test_cart_modesl.TestCartModel" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.repositories.test_cart_repository.TestCartRepository" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="E-Commerce" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -138,11 +141,11 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.models.test_cart_modesl.TestCartModel&quot;" />
+      <option name="_new_target" value="&quot;tests.repositories.test_cart_repository.TestCartRepository&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.models.test_product_model.TestProductModel" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.services.test_inventory_service.TestInventoryService" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="E-Commerce" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -156,11 +159,11 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.models.test_product_model.TestProductModel&quot;" />
+      <option name="_new_target" value="&quot;tests.services.test_inventory_service.TestInventoryService&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.models.test_product_model.TestProductModel.test_product_with_invalid_description_" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.services.test_inventory_service.TestInventoryService.test_that_add_product_require_store_keeper_logged" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="E-Commerce" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -174,17 +177,17 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.models.test_product_model.TestProductModel.test_product_with_invalid_description_&quot;" />
+      <option name="_new_target" value="&quot;tests.services.test_inventory_service.TestInventoryService.test_that_add_product_require_store_keeper_logged&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in models" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.services.test_inventory_service.TestInventoryService.test_that_delete_product_deletes_product" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="E-Commerce" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/tests/models" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -192,8 +195,8 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/app/tests/models&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;tests.services.test_inventory_service.TestInventoryService.test_that_delete_product_deletes_product&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Python tests in test_cart_repository.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
@@ -216,11 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService.test_that_add_product_require_store_keeper_logged" />
+        <item itemvalue="Python tests.Python tests for tests.repositories.test_cart_repository.TestCartRepository" />
+        <item itemvalue="Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService" />
+        <item itemvalue="Python tests.Python tests for tests.services.test_inventory_service.TestInventoryService.test_that_delete_product_deletes_product" />
         <item itemvalue="Python tests.Python tests in test_cart_repository.py" />
-        <item itemvalue="Python tests.Python tests in models" />
-        <item itemvalue="Python tests.Python tests for tests.models.test_product_model.TestProductModel.test_product_with_invalid_description_" />
-        <item itemvalue="Python tests.Python tests for tests.models.test_product_model.TestProductModel" />
-        <item itemvalue="Python tests.Python tests for tests.models.test_cart_modesl.TestCartModel" />
       </list>
     </recent_temporary>
   </component>
@@ -352,6 +355,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="update(model) : cart models and test&#10;update(model) : cart repository&#10;&#10;fix(router) : fixed the router and environment to run fastAPI in" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/E_Commerce$.coverage" NAME=" Coverage Results" MODIFIED="1788111467507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+    <SUITE FILE_PATH="coverage/E_Commerce$.coverage" NAME=" Coverage Results" MODIFIED="1788186844074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
   </component>
 </project>

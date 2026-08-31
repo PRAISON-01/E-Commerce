@@ -21,3 +21,9 @@ class ProductRepository:
         return self.session.get(Product, product_id)
 
 
+    def delete_product(self, product_id : UUID) -> type[Product.name] | None:
+        product = self.session.get(Product, product_id)
+        name = product.name
+        self.session.delete(product)
+        return name
+

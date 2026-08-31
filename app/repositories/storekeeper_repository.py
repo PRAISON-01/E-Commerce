@@ -39,3 +39,4 @@ class StoreKeeperRepository:
 
     def exists_by_email(self, email: str) -> bool:
         return self.find_by_email(email) is not None
+
