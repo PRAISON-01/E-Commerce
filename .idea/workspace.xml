@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="update(model) : cart models and test&#10;update(model) : cart repository&#10;&#10;fix(router) : fixed the router and environment to run fastAPI in">
+      <change afterPath="$PROJECT_DIR$/app/routers/inventory_router.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tests/models/test_cart_modesl.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/models/test_cart_modesl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/cart_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/cart_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/product_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/product_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/inventory_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/inventory_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="features/cart_repository" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -76,7 +81,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "features/cart__repository",
+    "git-widget-placeholder": "main",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
@@ -93,7 +98,7 @@
       <recent name="$PROJECT_DIR$/app/config" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="E-Commerce" />
       <option name="ENV_FILES" value="" />
@@ -211,11 +216,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for tests.models.test_product_model.TestProductModel" />
-        <item itemvalue="Python tests.Python tests in models" />
-        <item itemvalue="Python tests.Python tests for tests.models.test_cart_modesl.TestCartModel" />
-        <item itemvalue="Python tests.Python tests for tests.models.test_product_model.TestProductModel.test_product_with_invalid_description_" />
         <item itemvalue="Python tests.Python tests in test_cart_repository.py" />
+        <item itemvalue="Python tests.Python tests in models" />
+        <item itemvalue="Python tests.Python tests for tests.models.test_product_model.TestProductModel.test_product_with_invalid_description_" />
+        <item itemvalue="Python tests.Python tests for tests.models.test_product_model.TestProductModel" />
+        <item itemvalue="Python tests.Python tests for tests.models.test_cart_modesl.TestCartModel" />
       </list>
     </recent_temporary>
   </component>
@@ -345,16 +350,6 @@
     <MESSAGE value="feat(models): Tested Product Model , updated and Add&#10;updated(doc):  database and dependencies documentation&#10;&#10;fix(folder structure): renamed and rearranged folder structure" />
     <MESSAGE value="update(model) : cart models and test&#10;update(model) : cart repository&#10;&#10;fix(router) : fixed the router and environment to run fastAPI in" />
     <option name="LAST_COMMIT_MESSAGE" value="update(model) : cart models and test&#10;update(model) : cart repository&#10;&#10;fix(router) : fixed the router and environment to run fastAPI in" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/config/database.py</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/E_Commerce$.coverage" NAME=" Coverage Results" MODIFIED="1788111467507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />

@@ -1,6 +1,6 @@
 from uuid import UUID
 
-from repositories.product_repository import ProductRepository
+from app.repositories.product_repository import ProductRepository
 
 
 class InventoryService:

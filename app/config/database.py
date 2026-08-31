@@ -1,5 +1,7 @@
 import os
-from app.models import Product, Cart, CartItem
+from app.models.product import Product
+from app.models.cart import Cart, CartItem
+
 from sqlmodel import SQLModel, create_engine
 from urllib.parse import quote_plus
 from dotenv import load_dotenv

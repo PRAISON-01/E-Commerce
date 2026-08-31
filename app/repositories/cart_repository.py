@@ -1,7 +1,7 @@
 from sqlmodel import Session
 
-from models.cart import Cart
-from models.product import Product
+from app.models.cart import Cart
+from app.models.product import Product
 
 
 class CartRepository:
