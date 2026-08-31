@@ -2,6 +2,7 @@ from unittest.mock import MagicMock
 import pytest
 from uuid import uuid4
 
+from models.product import Product
 from repositories.product_repository import ProductRepository
 from services.inventory_service import InventoryService
 

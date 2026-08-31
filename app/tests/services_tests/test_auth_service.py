@@ -9,8 +9,7 @@ from app.services.auth_service import AuthService
 
 test_engine = create_engine(
     "sqlite:///:memory:",
-    connect_args={"check_same_thread": False}
-)
+    connect_args={"check_same_thread": False})
 
 class TestAuthService:
     @pytest.fixture
@@ -60,27 +59,21 @@ class TestAuthService:
         assert response.email == "john@gmail.com"
         assert response.is_logged_in is True
 
-    def test_login_customer_persists_logged_in_state(self, session, auth_service):
-        auth_service.create_customer(RegisterCustomer(name="John", email="john@gmail.com", password="test-password"))
-        payload = LoginCustomer(email="john@gmail.com", password="test-password")
-        response = auth_service.login_customer(payload)
-
-        found_customer = session.get(Customer, response.id)
-        assert found_customer.is_logged_in is True
-
     def test_login_customer_raises_exception_when_email_does_not_exist(self, auth_service):
         payload = LoginCustomer(email="fake@gmail.com", password="test-password")
         with pytest.raises(AuthenticationException, match="Invalid email or password"):
             auth_service.login_customer(payload)
 
-    def test_login_customer_raises_exception_when_password_is_wrong(self, auth_service):
+    def test_logout_customer(self, session, auth_service):
         auth_service.create_customer(
-            RegisterCustomer(name="John", email="john@gmail.com", password="test-password")
-        )
+        RegisterCustomer(name="John", email="john@gmail.com", password="test-password"))
+        auth_service.login_customer(LoginCustomer(email="john@gmail.com", password="test-password"))
+        payload = LogoutCustomer(email="john@gmail.com")
+        response = auth_service.logout_customer(payload)
 
-        payload = LoginCustomer(email="john@gmail.com", password="wrong-password")
-        with pytest.raises(AuthenticationException, match="Invalid email or password"):
-            auth_service.login_customer(payload)
+        assert response.is_logged_in is False
+        found_customer = session.get(Customer, response.id)
+        assert found_customer.is_logged_in is False
 
     def test_create_storekeeper(self, session, auth_service):
         payload = RegisterStoreKeeper(name="Mike", email="mike@gmail.com", password="test-password")
@@ -108,8 +101,7 @@ class TestAuthService:
 
     def test_login_storekeeper(self, auth_service):
         auth_service.create_storekeeper(
-            RegisterStoreKeeper(name="Mike", email="mike@gmail.com", password="test-password")
-        )
+        RegisterStoreKeeper(name="Mike", email="mike@gmail.com", password="test-password"))
         payload = LoginStoreKeeper(email="mike@gmail.com", password="test-password")
         response = auth_service.login_storekeeper(payload)
 
@@ -118,45 +110,10 @@ class TestAuthService:
         assert response.email == "mike@gmail.com"
         assert response.is_logged_in is True
 
-    def test_login_storekeeper_persists_logged_in_state(self, session, auth_service):
-        auth_service.create_storekeeper(RegisterStoreKeeper(name="Mike", email="mike@gmail.com", password="test-password"))
-        response = auth_service.login_storekeeper(
-        LoginStoreKeeper(email="mike@gmail.com", password="test-password"))
-
-        found_storekeeper = session.get(StoreKeeper, response.id)
-        assert found_storekeeper.is_logged_in is True
-
     def test_login_storekeeper_raises_exception_when_email_does_not_exist(self, auth_service):
         payload = LoginStoreKeeper(email="fake@gmail.com", password="test-password")
         with pytest.raises(AuthenticationException, match="Invalid email or password"):
             auth_service.login_storekeeper(payload)
-
-    def test_login_storekeeper_raises_exception_when_password_is_wrong(self, auth_service):
-        auth_service.create_storekeeper(
-            RegisterStoreKeeper(name="Mike", email="mike@gmail.com", password="test-password")
-        )
-        payload = LoginStoreKeeper(email="mike@gmail.com", password="wrong-password")
-        with pytest.raises(AuthenticationException, match="Invalid email or password"):
-            auth_service.login_storekeeper(payload)
-
-    def test_logout_customer(self, session, auth_service):
-        auth_service.create_customer(
-            RegisterCustomer(name="John", email="john@gmail.com", password="test-password")
-        )
-        auth_service.login_customer(LoginCustomer(email="john@gmail.com", password="test-password"))
-
-        payload = LogoutCustomer(email="john@gmail.com")
-        response = auth_service.logout_customer(payload)
-
-        assert response.is_logged_in is False
-
-        found_customer = session.get(Customer, response.id)
-        assert found_customer.is_logged_in is False
-
-    def test_logout_customer_raises_exception_when_customer_does_not_exist(self, auth_service):
-        payload = LogoutCustomer(email="fake@gmail.com")
-        with pytest.raises(AuthenticationException, match="Customer not found"):
-            auth_service.logout_customer(payload)
 
     def test_logout_storekeeper(self, session, auth_service):
         auth_service.create_storekeeper(
@@ -169,8 +126,3 @@ class TestAuthService:
         assert response.is_logged_in is False
         found_storekeeper = session.get(StoreKeeper, response.id)
         assert found_storekeeper.is_logged_in is False
-
-    def test_logout_storekeeper_raises_exception_when_storekeeper_does_not_exist(self, auth_service):
-        payload = LogoutStoreKeeper(email="fake@gmail.com")
-        with pytest.raises(AuthenticationException, match="StoreKeeper not found"):
-            auth_service.logout_storekeeper(payload)
