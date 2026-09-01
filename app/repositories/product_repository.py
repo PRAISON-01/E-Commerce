@@ -1,6 +1,6 @@
 from uuid import UUID
 
-from sqlmodel import Session
+from sqlmodel import Session, select
 
 from app.models.product import AddProduct, Product
 
@@ -10,12 +10,11 @@ class ProductRepository:
 
         self.session: Session = session
 
-    def save(self, product: AddProduct) -> Product:
-        db_product  =  Product.model_validate(product)
-        self.session.add(db_product)
+    def save(self, product: Product) -> Product:
+        product = self.session.merge(product)
         self.session.commit()
-        self.session.refresh(db_product)
-        return db_product
+        self.session.refresh(product)
+        return product
 
     def find_by_id(self, product_id: UUID) -> type[Product] | None:
         return self.session.get(Product, product_id)
@@ -26,4 +25,9 @@ class ProductRepository:
         name = product.name
         self.session.delete(product)
         return name
+
+    def find_all(self) -> list[Product]:
+        statement = select(Product)
+        results = self.session.exec(statement).all()
+        return list(results)
 

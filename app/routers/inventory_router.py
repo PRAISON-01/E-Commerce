@@ -3,12 +3,14 @@ from uuid import UUID
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 from sqlmodel import Session
+from sqlmodel.orm import session
 from starlette import status
 
 from app.config.dependencies import get_session
 from app.models.product import Product, AddProduct, UpdateProduct
 from app.repositories.product_repository import ProductRepository
 from app.services.inventory_service import InventoryService
+from repositories import product_repository
 
 router = APIRouter(prefix="/inventory", tags=["inventory_service"])
 
@@ -41,5 +43,28 @@ def create_new_product(
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to create new catalog product: {str(e)}")
+
+@router.post("/update_product", reponse_model=Product, status_code=status.HTTP_202_ACCEPTED)
+def update_product(
+        payload : UpdateProduct,
+        session : Session = Depends(get_session),
+):
+    try:
+        product_repository = ProductRepository(session)
+        saved_product= Product(
+            name=payload.name,
+            description=payload.description,
+            price=payload.price,
+            quantity=payload.quantity
+
+        )
+
+        return product_repository.save(saved_product)
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to create new catalog product: {str(e)}")
+
 
 
