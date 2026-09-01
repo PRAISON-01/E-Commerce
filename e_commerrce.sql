@@ -1,0 +1,2 @@
+CREATE DATABASE e_commerce;
+USE 
