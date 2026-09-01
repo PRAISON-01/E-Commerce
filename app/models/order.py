@@ -17,7 +17,7 @@ class OrderStatus(str, Enum):
 
 
 class CreateOrderItem(BaseModel):
-    product: Product
+    product_id: UUID
     quantity: int
 
 
@@ -44,5 +44,23 @@ class OrderItem(SQLModel, table=True):
     order_id: UUID = SQLField(foreign_key="orders.id")
     product_id: UUID = SQLField(foreign_key="product.id")
     quantity: int
-    price_at_purchase: float
+    price_purchased: float
     order: Order = Relationship(back_populates="items")
+
+class OrderItemResponse(BaseModel):
+    id: UUID
+    product_id: UUID
+    quantity: int
+    price_purchased: float
+    subtotal: float
+    model_config = {"from_attributes": True}
+
+
+class OrderResponse(BaseModel):
+    id: UUID
+    customer_id: UUID
+    order_date: datetime
+    total_amount: float
+    status: OrderStatus
+    items: List[OrderItemResponse] = []
+    model_config = {"from_attributes": True}
