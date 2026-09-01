@@ -10,12 +10,15 @@ class AddProduct(BaseModel):
     description : str = Field(min_length=3, max_length=100)
     price : float= Field(gt=0)
     quantity : int = Field(gt=0)
+    store_keeper_id : UUID
 
 class UpdateProduct(BaseModel):
     name : str = Field(..., min_length=3, max_length=100)
     description : str = Field(..., min_length=3, max_length=100)
     price : float | None = Field(gt=0)
     quantity : int | None = Field (gt=0)
+    store_keeper_id : UUID
+
 
 class Product(SQLModel, table=True):
     __tablename__ = "products"

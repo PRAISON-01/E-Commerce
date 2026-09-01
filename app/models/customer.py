@@ -5,6 +5,7 @@ from sqlmodel import SQLModel, Field as SQLField
 
 
 class Customer(SQLModel, table=True):
+    __tablename__ = "customers"
     id:  UUID= SQLField(default_factory=uuid4, primary_key=True)
     name: str= Field(min_length=3, max_length=20)
     email:EmailStr = SQLField(unique=True, index=True)
