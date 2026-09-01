@@ -20,11 +20,11 @@ class ProductRepository:
         return self.session.get(Product, product_id)
 
 
-    def delete_product(self, product_id : UUID) -> type[Product.name] | None:
-        product = self.session.get(Product, product_id)
-        name = product.name
+    def delete_product(self, product_id : UUID) :
+        product = self.find_by_id(product_id)
         self.session.delete(product)
-        return name
+        self.session.commit()
+
 
     def find_all(self) -> list[Product]:
         statement = select(Product)
