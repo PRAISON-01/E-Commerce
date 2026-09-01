@@ -14,14 +14,16 @@ class InventoryService:
         self.user_repository = user_repository
         self.session = session
 
-
-    def add_product(self, id: UUID, store_keeper_id : UUID,  quantity_to_add: int):
+    def validate_user_is_logged_in(self, store_keeper_id : UUID):
         user = self.user_repository.find_by_id(store_keeper_id)
         if user is None:
-            return "User not found!"
+            raise ValueError("User not found!")
 
-        if not  user.is_logged_in:
-            return f" {user.email} not logged in!"
+        if not user.is_logged_in:
+            raise ValueError(" {user.email} not logged in!")
+
+    def add_product(self, id: UUID, store_keeper_id : UUID,  quantity_to_add: int):
+        self.validate_user_is_logged_in(store_keeper_id)
 
         if quantity_to_add <= 0:
             raise ValueError("Invalid Amount!!!")
@@ -32,7 +34,9 @@ class InventoryService:
         saved_product.quantity += quantity_to_add
         return self.repository.save(saved_product)
 
-    def dispense(self, id: UUID, quantity_to_remove: int):
+    def dispense(self, id: UUID, store_keeper_id : UUID,  quantity_to_remove: int):
+        self.validate_user_is_logged_in(store_keeper_id)
+
         if quantity_to_remove <= 0:
             raise ValueError("Invalid Amount!!!")
 
@@ -48,6 +52,7 @@ class InventoryService:
         return self.repository.save(saved_product)
 
     def delete(self, id: UUID) -> str:
+
         product = self.session.get(Product, id)
         if not product:
             raise ValueError(f"Product {id} not found")

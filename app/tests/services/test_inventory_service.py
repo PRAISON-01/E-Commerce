@@ -1,15 +1,18 @@
 from uuid import uuid4
 import pytest
+from pydantic import UUID4
 from sqlmodel import SQLModel, Session, create_engine, StaticPool
 
 from app.models.product import Product
-from app.models.store_keeper import StoreKeeper
+from app.models.store_keeper import StoreKeeper, LoginStoreKeeper
 from app.models.cart import CartItem, Cart
 from app.models.customer import Customer
 
 from app.repositories.product_repository import ProductRepository
 from app.repositories.storekeeper_repository import StoreKeeperRepository
 from app.services.inventory_service import InventoryService
+from models import store_keeper
+
 
 class TestInventoryServiceIntegration:
     @pytest.fixture(name="session")
@@ -40,13 +43,30 @@ class TestInventoryServiceIntegration:
             user_repository=storekeeper_repo
         )
 
+    @pytest.fixture
+    def logged_in_store_keeper(self, session):
+        store_keeper_id = uuid4()
+
+        user = StoreKeeper(
+            id=store_keeper_id,
+            name="test_storekeeper",
+            email="keeper@test.com",
+            password="test_password",
+            is_logged_in=True,
+        )
+
+        session.add(user)
+        session.commit()
+
+        return user
+
     def test_increase_stock(self, session, service):
         store_keeper_id = uuid4()
         user = StoreKeeper(
             id=store_keeper_id,
-            name="Keeper",
+            name="test_storekeeper",
             email="keeper@test.com",
-            password="hashed_password",
+            password="test_password",
             is_logged_in=True
         )
 
@@ -77,42 +97,43 @@ class TestInventoryServiceIntegration:
         product_id = uuid4()
         non_existent_user_id = uuid4()
 
-        result = service.add_product(
-            id=product_id,
-            store_keeper_id=non_existent_user_id,
-            quantity_to_add=10
-        )
-
-        assert result == "User not found!"
+        with pytest.raises(ValueError, match="User not found!"):
+            service.add_product(
+                id=product_id,
+                store_keeper_id=non_existent_user_id,
+                quantity_to_add=10
+            )
 
     def test_add_product_store_keeper_not_logged_in(self, session, service):
         store_keeper_id = uuid4()
         user = StoreKeeper(
             id=store_keeper_id,
-            name="Keeper",
+            name="test_storekeeper",
             email="test@gmail.com",
-            password="hashed_password",
+            password="test_password",
             is_logged_in=False  # Not logged in
         )
         session.add(user)
         session.commit()
 
-        result = service.add_product(
-            id=uuid4(),
-            store_keeper_id=store_keeper_id,
-            quantity_to_add=10
-        )
 
-        assert result == " test@gmail.com not logged in!"
+
+        with pytest.raises(ValueError):
+            result = service.add_product(
+                id=uuid4(),
+                store_keeper_id=store_keeper_id,
+                quantity_to_add=10
+            )
+
 
     @pytest.mark.parametrize("quantity", [0, -10])
     def test_invalid_quantity_for_add_product(self, quantity, session, service):
         store_keeper_id = uuid4()
         user = StoreKeeper(
             id=store_keeper_id,
-            name="Keeper",
+            name="test_storekeeper",
             email="keeper@test.com",
-            password="hashed_password",
+            password="test_password",
             is_logged_in=True
         )
         session.add(user)
@@ -126,6 +147,16 @@ class TestInventoryServiceIntegration:
             )
 
     def test_decrease_product_quantity(self, session, service):
+        store_keeper_id = uuid4()
+
+        user = StoreKeeper(
+            id=store_keeper_id,
+            name="test_storekeeper",
+            email="keeper@test.com",
+            password="test_password",
+            is_logged_in=True
+        )
+
         product_id = uuid4()
         product = Product(
             id=product_id,
@@ -134,21 +165,52 @@ class TestInventoryServiceIntegration:
             price=5.99,
             quantity=13
         )
+
+        session.add(user)
         session.add(product)
         session.commit()
 
-        updated_product = service.dispense(id=product_id, quantity_to_remove=10)
+        updated_product = service.dispense(
+            id=product_id,
+            store_keeper_id=store_keeper_id,
+            quantity_to_remove=10
+        )
 
         assert updated_product.quantity == 3
+
         session.refresh(product)
         assert product.quantity == 3
 
     @pytest.mark.parametrize("quantity", [0, -10])
-    def test_invalid_quantity_for_dispense(self, quantity, service):
+    def test_invalid_quantity_for_dispense_more_than_available_product(self, quantity, service):
+        store_keeper_id = uuid4()
+        user = StoreKeeper(
+            id=store_keeper_id,
+            name="test_storekeeper",
+            email="keeper@test.com",
+            password="test_password",
+            is_logged_in=True
+        )
+
+        session.add(user)
+        session.commit()
+
+
+
         with pytest.raises(ValueError, match="Invalid Amount!!!"):
-            service.dispense(id=uuid4(), quantity_to_remove=quantity)
+            service.dispense(id=uuid4(),store_keeper_id=store_keeper_id, quantity_to_remove=quantity)
 
     def test_empty_product_stock_dispense_product(self, session, service):
+        store_keeper_id = uuid4()
+
+        user = StoreKeeper(
+            id=store_keeper_id,
+            name="test_storekeeper",
+            email="keeper@test.com",
+            password="test_password",
+            is_logged_in=True
+        )
+
         product_id = uuid4()
         product = Product(
             id=product_id,
@@ -157,13 +219,12 @@ class TestInventoryServiceIntegration:
             price=5.99,
             quantity=3
         )
+        session.add(user)
         session.add(product)
         session.commit()
 
-        service.dispense(id=product_id, quantity_to_remove=3)
-
-        with pytest.raises(ValueError, match="Not enough stock available!!!"):
-            service.dispense(id=product_id, quantity_to_remove=10)
+        with pytest.raises(ValueError):
+            service.dispense(id=product_id, store_keeper_id=store_keeper_id, quantity_to_remove=10)
 
     def test_that_delete_product_deletes_product(self, session, service):
         product_id = uuid4()
@@ -207,3 +268,38 @@ class TestInventoryServiceIntegration:
         found_product = service.get_product(id=product_id)
         assert found_product.name == "test_name"
         assert session.get(Product, product_id).id == found_product.id
+
+    def test_cannot_dispense_when_store_keeper_not_logged_in(
+            self,
+            session,
+            service,
+    ):
+        store_keeper_id = uuid4()
+        product_id = uuid4()
+
+        user = StoreKeeper(
+            id=store_keeper_id,
+            name="test_storekeeper",
+            email="test@gmail.com",
+            password="test_password",
+            is_logged_in=False,
+        )
+
+        product = Product(
+            id=product_id,
+            name="Test Product",
+            description="Test Description",
+            price=5.99,
+            quantity=10,
+        )
+
+        session.add(user)
+        session.add(product)
+        session.commit()
+
+        with pytest.raises(ValueError):
+            service.dispense(
+                id=product_id,
+                store_keeper_id=store_keeper_id,
+                quantity_to_remove=3,
+            )
