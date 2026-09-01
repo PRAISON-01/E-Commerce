@@ -1,35 +1,8 @@
-# from sqlmodel import Session
-#
-# # repositories/product_repository.py
-# from typing import Optional
-# from uuid import UUID
-# from sqlmodel import Session, select, func
-# from app.models.product import Product, AddProduct
-#
-# class ProductRepository:
-#     def __init__(self, session: Session):
-#         self.session = session
-#
-#     def save(self, product_data: AddProduct) -> Product:
-#         # Convert schema to DB model if it isn't already
-#         db_product = Product.model_validate(product_data)
-#         self.session.add(db_product)
-#         self.session.commit()
-#         self.session.refresh(db_product)
-#         return db_product
-#
-#     def find_by_id(self, product_id: UUID) -> Optional[Product]:
-#         return self.session.get(Product, product_id)
-#
-#     def count(self) -> int:
-#         statement = select(func.count()).select_from(Product)
-#         return self.session.exec(statement).one()
-from typing import Optional
 from uuid import UUID
 
-from sqlmodel import Session
+from sqlmodel import Session, select
 
-from models.product import AddProduct, Product
+from app.models.product import AddProduct, Product
 
 
 class ProductRepository:
@@ -37,14 +10,24 @@ class ProductRepository:
 
         self.session: Session = session
 
-    def save(self, product: AddProduct) -> Product:
-        db_product  =  Product.model_validate(product)
-        self.session.add(db_product)
+    def save(self, product: Product) -> Product:
+        product = self.session.merge(product)
         self.session.commit()
-        self.session.refresh(db_product)
-        return db_product
+        self.session.refresh(product)
+        return product
 
     def find_by_id(self, product_id: UUID) -> type[Product] | None:
         return self.session.get(Product, product_id)
 
+
+    def delete_product(self, product_id : UUID) -> type[Product.name] | None:
+        product = self.session.get(Product, product_id)
+        name = product.name
+        self.session.delete(product)
+        return name
+
+    def find_all(self) -> list[Product]:
+        statement = select(Product)
+        results = self.session.exec(statement).all()
+        return list(results)
 

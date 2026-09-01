@@ -4,9 +4,10 @@ import pytest
 from sqlalchemy import StaticPool, create_engine
 from sqlmodel import SQLModel, Session
 
-from models.product import Product
-from models.cart import Cart, CartItem
-from repositories.cart_repository import CartRepository
+from app.models.product import Product
+from app.models.cart import Cart, CartItem
+from app.models.customer import Customer
+from app.repositories.cart_repository import CartRepository
 
 
 class TestCartRepository:
@@ -96,3 +97,5 @@ class TestCartRepository:
         saved_cart = repository.save(cart)
 
         assert saved_cart.id == cart.id
+
+
