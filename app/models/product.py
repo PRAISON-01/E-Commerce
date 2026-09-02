@@ -1,5 +1,5 @@
 import uuid
-from uuid import UUID
+from uuid import UUID, uuid4
 
 from pydantic import BaseModel, Field
 from sqlmodel import SQLModel, Field as SQLField, Relationship
@@ -23,12 +23,10 @@ class UpdateProduct(BaseModel):
 
 class Product(SQLModel, table=True):
     __tablename__ = "products"
-    id : UUID = SQLField(default_factory=uuid.uuid4, primary_key=True)
+    id : UUID = SQLField(default_factory=uuid4, primary_key=True)
     name: str = Field( min_length=3, max_length=100)
     description: str = Field( default=None, min_length=3, max_length=100)
     price: float
     quantity: int
 
     cart_items: list["CartItem"] = Relationship(back_populates="product")
-
-

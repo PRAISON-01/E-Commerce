@@ -1,5 +1,7 @@
 from http.client import HTTPException
 from uuid import UUID
+
+from pydantic import BaseModel
 from sqlmodel import Session
 
 from app.repositories.product_repository import ProductRepository
@@ -8,6 +10,7 @@ from app.models.product import Product, AddProduct, UpdateProduct  # Assuming Up
 from app.exception import AuthenticationException
 from app.exception.product_not_found_exception import ProductNotFoundException
 from app.exception.product_stock_exception import ProductStockException
+from app.models.product import Product
 
 
 class InventoryService:
@@ -45,8 +48,6 @@ class InventoryService:
         if saved_product is None:
             raise ProductNotFoundException(f"Product {payload.id} does not exist!")
 
-
-
         saved_product.quantity += payload.quantity
 
         saved_product.name = payload.name
@@ -57,42 +58,41 @@ class InventoryService:
 
         return self.repository.save(saved_product)
 
-    def dispense(self, product_id: UUID, store_keeper_id: UUID, quantity_to_remove: int) -> Product:
+    def dispense(self, id: UUID, store_keeper_id: UUID, quantity_to_remove: int) -> Product:
         self.__validate_user_is_logged_in(store_keeper_id)
 
         if quantity_to_remove <= 0:
             raise ProductStockException("Invalid Quantity!!!")
 
-        saved_product = self.repository.find_by_id(product_id)
+        saved_product = self.repository.find_by_id(id)
         if saved_product is None:
-            raise ProductNotFoundException(f"Product {product_id} not found")
+            raise ProductNotFoundException(f"Product {id} not found")
 
         if saved_product.quantity < quantity_to_remove:
             raise ProductStockException("Not enough stock available!!!")
 
         saved_product.quantity -= quantity_to_remove
         return self.repository.save(saved_product)
-
-    def delete(self, product_id: UUID, store_keeper_id: UUID) -> str:
+    #
+    def delete(self, id: UUID, store_keeper_id: UUID):
         self.__validate_user_is_logged_in(store_keeper_id)
-        product = self.repository.find_by_id(product_id)
+        product = self.repository.find_by_id(id)
 
         if not product:
-            raise ProductNotFoundException(f"Product {product_id} not found")
+            raise ProductNotFoundException(f"Product {id} not found")
 
-        name = product.name
         self.repository.delete_product(product.id)
-        return name
 
-    def get_product(self, product_id: UUID, store_keeper_id: UUID) -> Product:
+    def get_product(self, id: UUID, store_keeper_id: UUID) -> Product:
         self.__validate_user_is_logged_in(store_keeper_id)
-        product = self.repository.find_by_id(product_id)
+        product = self.repository.find_by_id(id)
 
         if product is None:
-            raise ProductNotFoundException(f"Product {product_id} not found")
+            raise ProductNotFoundException(f"Product {id} not found")
 
-        return product
-
+        return Product.model_validate(product)
+    #
     def get_all_products(self, store_keeper_id: UUID) -> list[Product]:
         self.__validate_user_is_logged_in(store_keeper_id)
         return self.repository.find_all()
+#
