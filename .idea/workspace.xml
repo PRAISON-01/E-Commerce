@@ -2,10 +2,79 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="update(service test) : Updated the inventory service integration test">
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/inventory_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/inventory_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/inventory_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/inventory_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Auth/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Auth/dom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Auth/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Auth/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/MainApp/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/MainApp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/MainApp/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/fonts/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/fonts/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/fonts/RedHatText-Italic-VariableFont_wght.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/fonts/RedHatText-VariableFont_wght.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/fonts/static/RedHatText-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/fonts/static/RedHatText-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/fonts/static/RedHatText-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/icon-add-to-cart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/icon-carbon-neutral.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/icon-decrement-quantity.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/icon-increment-quantity.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/icon-order-confirmed.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/icon-remove-item.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/illustration-empty-cart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-baklava-desktop.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-baklava-mobile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-baklava-tablet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-baklava-thumbnail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-brownie-desktop.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-brownie-mobile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-brownie-tablet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-brownie-thumbnail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-cake-desktop.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-cake-mobile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-cake-tablet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-cake-thumbnail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-creme-brulee-desktop.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-creme-brulee-mobile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-creme-brulee-tablet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-creme-brulee-thumbnail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-macaron-desktop.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-macaron-mobile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-macaron-tablet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-macaron-thumbnail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-meringue-desktop.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-meringue-mobile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-meringue-tablet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-meringue-thumbnail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-panna-cotta-desktop.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-panna-cotta-mobile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-panna-cotta-tablet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-panna-cotta-thumbnail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-tiramisu-desktop.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-tiramisu-mobile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-tiramisu-tablet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-tiramisu-thumbnail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-waffle-desktop.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-waffle-mobile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-waffle-tablet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/assets/images/image-waffle-thumbnail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.python-version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pyproject.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/uv.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/e_commerrce.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +102,12 @@
     &quot;assignee&quot;: &quot;PRAISON-01&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/PRAISON-01/E-Commerce&quot;,
-    &quot;accountId&quot;: &quot;b9dfa56d-3e3b-41a2-9b0d-76166f7f8402&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/PRAISON-01/E-Commerce",
+    "accountId": "82994b6f-71ed-4b2b-9f1a-4f66390196ce"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/starlette/status.py" root0="SKIP_INSPECTION" />
   </component>
@@ -106,13 +175,15 @@
     "Python tests.Python tests in test_product_repository.py.executor": "Run",
     "Python tests.Python tests in tests.executor": "Run",
     "Python.auth_service.executor": "Debug",
+    "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "update/bug",
+    "git-widget-placeholder": "update/folder-structure",
+    "last_opened_file_path": "/home/aramide/Documents/E-Commerce/FRONTEND/MainApp",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
@@ -124,12 +195,20 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/FRONTEND/MainApp" />
+      <recent name="$PROJECT_DIR$/FRONTEND" />
+      <recent name="$PROJECT_DIR$/FRONTEND/Auth" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/FRONTEND" />
       <recent name="$PROJECT_DIR$/app/config" />
+      <recent name="$PROJECT_DIR$/FRONTEND/MainApp" />
+      <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="E-Commerce" />
       <option name="ENV_FILES" value="" />
@@ -247,11 +326,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository" />
-        <item itemvalue="Python tests.Python tests for tests.repositories.test_storekeeper_repository.TestStoreKeeperRepository" />
-        <item itemvalue="Python tests.Python tests for tests.repositories.test_cart_repository.TestCartRepository" />
-        <item itemvalue="Python tests.Python tests for tests.services.test_inventory_service.TestInventoryServiceIntegration" />
         <item itemvalue="Python tests.Python tests for tests.services.test_inventory_service.TestInventoryServiceIntegration.test_that_get_product_with_valid_product_id" />
+        <item itemvalue="Python tests.Python tests for tests.services.test_inventory_service.TestInventoryServiceIntegration" />
+        <item itemvalue="Python tests.Python tests for tests.repositories.test_storekeeper_repository.TestStoreKeeperRepository" />
+        <item itemvalue="Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository" />
+        <item itemvalue="Python tests.Python tests for tests.repositories.test_cart_repository.TestCartRepository" />
       </list>
     </recent_temporary>
   </component>
@@ -371,6 +450,11 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
+                  <option value="feature/modification" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
                   <option value="main" />
                 </option>
               </RecentGroup>
@@ -400,7 +484,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="feature/modification" />
                       </list>
                     </value>
                   </entry>
