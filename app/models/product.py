@@ -1,6 +1,5 @@
 import uuid
 from uuid import UUID
-
 from pydantic import BaseModel, Field
 from sqlmodel import SQLModel, Field as SQLField, Relationship
 
