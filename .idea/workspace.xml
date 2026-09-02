@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="update(service test) : Updated the inventory service integration test&#10;update(router): updated the inventory_router.py">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/inventory_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/inventory_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/inventory_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/inventory_service.py" afterDir="false" />
-    </list>
+    <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="update(service test) : Updated the inventory service integration test&#10;update(router): updated the inventory_router.py" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -299,7 +294,7 @@
       <workItem from="1788207139415" duration="17580000" />
       <workItem from="1788257720768" duration="42686000" />
       <workItem from="1788338738720" duration="1282000" />
-      <workItem from="1788356633737" duration="4111000" />
+      <workItem from="1788356633737" duration="4788000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -381,7 +376,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788345804552</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update(service test) : Updated the inventory service integration test&#10;update(router): updated the inventory_router.py">
+      <option name="closed" value="true" />
+      <created>1788363848439</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1788363848439</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
