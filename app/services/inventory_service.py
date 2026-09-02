@@ -45,7 +45,15 @@ class InventoryService:
         if saved_product is None:
             raise ProductNotFoundException(f"Product {payload.id} does not exist!")
 
+
+
         saved_product.quantity += payload.quantity
+
+        saved_product.name = payload.name
+
+        saved_product.description = payload.description
+
+        saved_product.price = payload.price
 
         return self.repository.save(saved_product)
 
