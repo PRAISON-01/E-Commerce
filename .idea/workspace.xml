@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="update(service test) : Updated the inventory service integration test">
-      <change afterPath="$PROJECT_DIR$/app/exception/product_not_found_exception.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/exception/product_stock_exception.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/E-Commerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/E-Commerce.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/order.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/order.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/order_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/order_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/product_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/product_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/inventory_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/inventory_router.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/inventory_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/inventory_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/sales_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/sales_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tests/repositories/test_product_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/repositories/test_product_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tests/services/test_inventory_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/services/test_inventory_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,9 +112,9 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "feature/inventory__router",
+    "git-widget-placeholder": "update/bug",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {

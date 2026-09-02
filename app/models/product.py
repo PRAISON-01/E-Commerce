@@ -16,8 +16,8 @@ class UpdateProduct(BaseModel):
     id : UUID
     name : str = Field(..., min_length=3, max_length=100)
     description : str = Field(..., min_length=3, max_length=100)
-    price : float | None = Field(gt=0)
-    quantity : int | None = Field (gt=0)
+    price : float = Field(gt=0)
+    quantity : int = Field (gt=0)
     store_keeper_id : UUID
 
 
