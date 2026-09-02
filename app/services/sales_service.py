@@ -1,10 +1,10 @@
 from typing import List
 from uuid import UUID
 
-from models.order import Order, OrderItem, OrderResponse, OrderStatus
-from repositories.order_repository import OrderRepository
+from app.models.order import Order, OrderItem, OrderResponse, OrderStatus
+from app.repositories.order_repository import OrderRepository
 #from repositories.cart_repository import CartRepository
-from repositories.product_repository import ProductRepository
+from app.repositories.product_repository import ProductRepository
 
 
 
@@ -45,5 +45,5 @@ class SalesService:
         return self._to_response(updated)
 
     def _to_response(self, order: Order) -> OrderResponse:
-        order.items = self.repository.get_items(order.id)   # attach items onto the row
+        order.items = self.repository.get_items(order.id)
         return OrderResponse.model_validate(order)

@@ -16,9 +16,9 @@ class ProductRepository:
         self.session.refresh(product)
         return product
 
-    def find_by_id(self, product_id: UUID) -> type[Product] | None:
-        return self.session.get(Product, product_id)
-
+    def find_by_id(self, product_id: UUID) -> Product | None:
+        statement = select(Product).where(Product.id == product_id)
+        return self.session.exec(statement).first()
 
     def delete_product(self, product_id : UUID) :
         product = self.find_by_id(product_id)

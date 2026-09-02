@@ -13,6 +13,7 @@ class AddProduct(BaseModel):
     store_keeper_id : UUID
 
 class UpdateProduct(BaseModel):
+    id : UUID
     name : str = Field(..., min_length=3, max_length=100)
     description : str = Field(..., min_length=3, max_length=100)
     price : float | None = Field(gt=0)

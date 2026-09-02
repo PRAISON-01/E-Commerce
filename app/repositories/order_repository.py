@@ -2,7 +2,7 @@ from typing import List, Optional
 from uuid import UUID
 from sqlmodel import Session, select
 
-from models.order import Order, OrderItem, OrderStatus
+from app.models.order import Order, OrderItem, OrderStatus
 
 
 class OrderRepository:
