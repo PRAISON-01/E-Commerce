@@ -1,10 +1,6 @@
 from uuid import UUID, uuid4
-
 from pydantic import BaseModel
 from sqlmodel import Field as SQLField, Relationship, SQLModel
-
-
-
 
 class CreateCart(BaseModel):
     product_id: UUID
