@@ -1,9 +1,19 @@
+from uuid import uuid4
+
 import pytest
 from sqlalchemy import StaticPool, create_engine
 from sqlmodel import SQLModel, Session
 
-from models.product import AddProduct
-from repositories.product_repository import ProductRepository
+from app.models.product import AddProduct, Product
+from app.repositories.product_repository import ProductRepository
+
+
+from app.models.product import Product
+from app.models.cart import Cart, CartItem
+from app.models.order import Order, OrderItem, OrderStatus
+from app.models.store_keeper import StoreKeeper
+from app.models.customer import Customer
+
 class TestProductRepository:
     @pytest.fixture
     def db_session(self):
@@ -21,7 +31,9 @@ class TestProductRepository:
 
 
     def create_test_product(self):
-        product = AddProduct(
+        product_id = uuid4()
+        product = Product(
+            id =product_id,
             name = "test_name",
             description = "test_description",
             price = 5.99,
@@ -52,7 +64,7 @@ class TestProductRepository:
         assert saved_product.id is not None
 
 
-        print(f"There you are >> {saved_product.id}")
+        print(f"Gotcha! >> {saved_product.id}")
         assert repo.find_by_id(saved_product.id) == saved_product
 
 

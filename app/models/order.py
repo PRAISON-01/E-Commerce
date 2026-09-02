@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 from typing import List, Optional
 from uuid import UUID, uuid4
@@ -29,8 +29,8 @@ class CreateOrder(BaseModel):
 class Order(SQLModel, table=True):
     __tablename__ = "orders"
     id: UUID = SQLField(default_factory=uuid4, primary_key=True)
-    customer_id: UUID = SQLField(foreign_key="customer.id")
-    order_date: datetime = SQLField(default_factory=datetime.utcnow)
+    customer_id: UUID = SQLField(foreign_key="customers.id")
+    order_date: datetime = SQLField(default_factory=lambda: datetime.now(timezone.utc))
     total_amount: float
     status: OrderStatus = SQLField(default=OrderStatus.PENDING)
 
@@ -42,7 +42,7 @@ class OrderItem(SQLModel, table=True):
 
     id: UUID = SQLField(default_factory=uuid4, primary_key=True)
     order_id: UUID = SQLField(foreign_key="orders.id")
-    product_id: UUID = SQLField(foreign_key="product.id")
+    product_id: UUID = SQLField(foreign_key="products.id")
     quantity: int
     price_purchased: float
     order: Order = Relationship(back_populates="items")
@@ -58,7 +58,7 @@ class OrderItemResponse(BaseModel):
 
 class OrderResponse(BaseModel):
     id: UUID
-    customer_id: UUID
+    customers_id: UUID
     order_date: datetime
     total_amount: float
     status: OrderStatus
