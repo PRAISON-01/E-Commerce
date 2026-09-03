@@ -7,3 +7,4 @@ app/config/.env
 __pycache__/
 *.pyc
 app.db
+.idea/workspace.xml
