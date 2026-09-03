@@ -24,7 +24,7 @@ def get_inventory_service(session : Session = Depends(get_session)) -> Inventory
     return InventoryService(repository=product_repository, user_repository=store_keeper_repository)
 
 class InventoryUpdateRequest(BaseModel):
-    product_id : UUID
+    id : UUID
     quantity: int = Field(gt=0)
 
 
@@ -75,15 +75,15 @@ def get_all_products(
 
 
 
-@router.get("/get_product", response_model=list[Product], status_code=status.HTTP_202_ACCEPTED)
+@router.get("/get_product", response_model=Product, status_code=status.HTTP_202_ACCEPTED)
 
 def get_product(
-        product_id : UUID,
+        id : UUID,
         store_keeper_id: UUID,
         inventory_service: InventoryService = Depends(get_inventory_service)
 ):
     try:
-        return inventory_service.get_product(product_id, store_keeper_id)
+        return inventory_service.get_product(id, store_keeper_id)
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -91,17 +91,17 @@ def get_product(
         )
 
 
-@router.delete("/delete_product/{product_id}", response_model=Product, status_code=status.HTTP_200_OK)
+@router.delete("/delete_product/{id}",  status_code=status.HTTP_204_NO_CONTENT)
 def delete_product(
-        product_id : UUID,
+        id : UUID,
         store_keeper_id : UUID,
         inventory_service : InventoryService = Depends(get_inventory_service),
 ):
     try:
-        return inventory_service.delete(product_id, store_keeper_id)
+        return inventory_service.delete(id, store_keeper_id)
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get all products: {str(e)}"
+            detail=f"Failed to delete product: {str(e)}"
         )
 
