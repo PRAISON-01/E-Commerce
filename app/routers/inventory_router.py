@@ -23,13 +23,6 @@ def get_inventory_service(session : Session = Depends(get_session)) -> Inventory
     store_keeper_repository = StoreKeeperRepository(session)
     return InventoryService(repository=product_repository, user_repository=store_keeper_repository)
 
-class InventoryUpdateRequest(BaseModel):
-    id : UUID
-    quantity: int = Field(gt=0)
-
-
-
-
 @router.post("/create_product", response_model=Product, status_code=status.HTTP_201_CREATED)
 def create_new_product(
     payload: AddProduct,
@@ -87,7 +80,7 @@ def get_product(
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get all products: {str(e)}"
+            detail=f"Failed to get product: {str(e)}"
         )
 
 
