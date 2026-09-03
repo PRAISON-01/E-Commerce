@@ -3,14 +3,15 @@ from uuid import UUID
 
 from app.models.order import Order, OrderItem, OrderResponse, OrderStatus
 from app.repositories.order_repository import OrderRepository
-#from repositories.cart_repository import CartRepository
+from app.repositories.cart_repository import CartRepository
 from app.repositories.product_repository import ProductRepository
 
 
 
-class SalesService:
-    def __init__(self, repository: OrderRepository, product_repository: ProductRepository):
+class OrderService:
+    def __init__(self, repository: OrderRepository, cart_repository: CartRepository, product_repository: ProductRepository):
         self.repository = repository
+        self.cart_repository = cart_repository
         self.product_repository = product_repository
 
 
@@ -24,7 +25,7 @@ class SalesService:
 
     def list_orders(self, customer_id: UUID) -> List[OrderResponse]:
         orders = self.repository.list_for_customer(customer_id)
-        return [self._to_response(o) for o in orders]
+        return [self._to_response(item) for item in orders]
 
     def cancel_order(self, customer_id: UUID, order_id: UUID) -> OrderResponse:
         order = self.repository.get(order_id)

@@ -31,7 +31,7 @@ class OrderRepository:
         statement = select(Order).where(Order.customer_id == customer_id)
         return self._session.exec(statement).all()
 
-    def update_status(self, order_id: UUID, status: str) -> type[Order] | None:
+    def update_status(self, order_id: UUID, status: OrderStatus) -> type[Order]:
         order = self._session.get(Order, order_id)
         if order is None:
             return None

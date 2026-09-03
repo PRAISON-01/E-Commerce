@@ -2,8 +2,7 @@ from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
-from sqlmodel import Session
-from sqlmodel.orm import session
+from sqlmodel.orm.session import Session
 from starlette import status
 
 from app.config.dependencies import get_session
