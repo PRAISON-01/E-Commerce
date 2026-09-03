@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="update(service test) : Updated the inventory service integration test&#10;update(router): updated the inventory_router.py" />
+    <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="update(service test) : Updated the inventory service integration test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DBNavigator.Project.Workspace.Settings">
-    <assistant-settings>
-      <credential-settings>
-        <credentials />
-      </credential-settings>
-      <profile-settings>
-        <profiles />
-      </profile-settings>
-      <mcp-server-settings>
-        <workspace-integration value="false" />
-        <mcp-servers />
-        <mcp-tool-approvals />
-      </mcp-server-settings>
-    </assistant-settings>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,7 +31,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/PRAISON-01/E-Commerce&quot;,
-    &quot;accountId&quot;: &quot;b9dfa56d-3e3b-41a2-9b0d-76166f7f8402&quot;
+    &quot;accountId&quot;: &quot;82994b6f-71ed-4b2b-9f1a-4f66390196ce&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -116,13 +101,15 @@
     &quot;Python tests.Python tests in test_product_repository.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests in tests.executor&quot;: &quot;Run&quot;,
     &quot;Python.auth_service.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;update/bug-fix&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;update/folder-structure&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/aramide/Documents/E-Commerce/FRONTEND/MainApp&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -134,12 +121,20 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/FRONTEND/MainApp" />
+      <recent name="$PROJECT_DIR$/FRONTEND" />
+      <recent name="$PROJECT_DIR$/FRONTEND/Auth" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/FRONTEND" />
       <recent name="$PROJECT_DIR$/app/config" />
+      <recent name="$PROJECT_DIR$/FRONTEND/MainApp" />
+      <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for tests.services.test_inventory_service.TestInventoryServiceIntegration">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="E-Commerce" />
       <option name="ENV_FILES" value="" />
@@ -257,11 +252,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for tests.services.test_inventory_service.TestInventoryServiceIntegration" />
-        <item itemvalue="Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository" />
-        <item itemvalue="Python tests.Python tests for tests.repositories.test_storekeeper_repository.TestStoreKeeperRepository" />
-        <item itemvalue="Python tests.Python tests for tests.repositories.test_cart_repository.TestCartRepository" />
         <item itemvalue="Python tests.Python tests for tests.services.test_inventory_service.TestInventoryServiceIntegration.test_that_get_product_with_valid_product_id" />
+        <item itemvalue="Python tests.Python tests for tests.services.test_inventory_service.TestInventoryServiceIntegration" />
+        <item itemvalue="Python tests.Python tests for tests.repositories.test_storekeeper_repository.TestStoreKeeperRepository" />
+        <item itemvalue="Python tests.Python tests for tests.repositories.test_product_repository.TestProductRepository" />
+        <item itemvalue="Python tests.Python tests for tests.repositories.test_cart_repository.TestCartRepository" />
       </list>
     </recent_temporary>
   </component>
@@ -294,7 +289,6 @@
       <workItem from="1788207139415" duration="17580000" />
       <workItem from="1788257720768" duration="42686000" />
       <workItem from="1788338738720" duration="1282000" />
-      <workItem from="1788356633737" duration="5104000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -368,23 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788286587534</updated>
     </task>
-    <task id="LOCAL-00010" summary="update(service test) : Updated the inventory service integration test&#10;update(router): updated the inventory_router.py">
+    <task id="LOCAL-00010" summary="update(service test) : Updated the inventory service integration test">
       <option name="closed" value="true" />
-      <created>1788345804552</created>
+      <created>1788370450564</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1788345804552</updated>
+      <updated>1788370450564</updated>
     </task>
-    <task id="LOCAL-00011" summary="update(service test) : Updated the inventory service integration test&#10;update(router): updated the inventory_router.py">
-      <option name="closed" value="true" />
-      <created>1788363848439</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1788363848439</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,6 +382,11 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="feature/modification" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="main" />
@@ -427,7 +418,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="feature/modification" />
                       </list>
                     </value>
                   </entry>
@@ -447,11 +438,10 @@
     <MESSAGE value="update(model) : cart models and test&#10;update(model) : cart repository&#10;&#10;fix(router) : fixed the router and environment to run fastAPI in" />
     <MESSAGE value="update(service) : Updated the inventory service&#10;update(repository) : Updated the product repository" />
     <MESSAGE value="update(service test) : Updated the inventory service integration test" />
-    <MESSAGE value="update(service test) : Updated the inventory service integration test&#10;update(router): updated the inventory_router.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="update(service test) : Updated the inventory service integration test&#10;update(router): updated the inventory_router.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="update(service test) : Updated the inventory service integration test" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/E_Commerce$.coverage" NAME=" Coverage Results" MODIFIED="1788346830994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+    <SUITE FILE_PATH="coverage/E_Commerce$.coverage" NAME=" Coverage Results" MODIFIED="1788339980012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
     <SUITE FILE_PATH="coverage/E_Commerce$auth_service.coverage" NAME="auth_service Coverage Results" MODIFIED="1788197132143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/services" />
   </component>
 </project>
