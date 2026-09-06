@@ -1,7 +1,7 @@
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, EmailStr
 from sqlmodel import Session
 from sqlmodel.orm import session
 from starlette import status
@@ -54,11 +54,11 @@ def update_product(
 @router.get("/get_all_products", response_model=list[Product], status_code=status.HTTP_202_ACCEPTED)
 
 def get_all_products(
-        store_keeper_id: UUID,
+        store_keeper_email: EmailStr,
         inventory_service: InventoryService = Depends(get_inventory_service)
 ):
     try:
-        return inventory_service.get_all_products(store_keeper_id)
+        return inventory_service.get_all_products(store_keeper_email)
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -72,11 +72,11 @@ def get_all_products(
 
 def get_product(
         id : UUID,
-        store_keeper_id: UUID,
+        store_keeper_email: EmailStr,
         inventory_service: InventoryService = Depends(get_inventory_service)
 ):
     try:
-        return inventory_service.get_product(id, store_keeper_id)
+        return inventory_service.get_product(id, store_keeper_email)
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -84,14 +84,14 @@ def get_product(
         )
 
 
-@router.delete("/delete_product/{id}",  status_code=status.HTTP_204_NO_CONTENT)
+@router.delete("/delete_product",  status_code=status.HTTP_204_NO_CONTENT)
 def delete_product(
         id : UUID,
-        store_keeper_id : UUID,
+        store_keeper_email : EmailStr,
         inventory_service : InventoryService = Depends(get_inventory_service),
 ):
     try:
-        return inventory_service.delete(id, store_keeper_id)
+        return inventory_service.delete(id, store_keeper_email)
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
