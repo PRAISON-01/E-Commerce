@@ -25,13 +25,15 @@ class OrderRepository:
 
     def get_items(self, order_id: UUID) -> List[OrderItem]:
         statement = select(OrderItem).where(OrderItem.order_id == order_id)
-        return self._session.exec(statement).all()
+        result = self._session.exec(statement).all()
+        return list(result)
 
     def list_for_customer(self, customer_id: UUID) -> List[Order]:
         statement = select(Order).where(Order.customer_id == customer_id)
-        return self._session.exec(statement).all()
+        result = self._session.exec(statement).all()
+        return list(result)
 
-    def update_status(self, order_id: UUID, status: str) -> type[Order] | None:
+    def update_status(self, order_id: UUID, status: OrderStatus) -> type[Order]:
         order = self._session.get(Order, order_id)
         if order is None:
             return None
