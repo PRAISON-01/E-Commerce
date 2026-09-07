@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d46d71d5-1f17-4bfb-bcc4-99b358d81cc5" name="Changes" comment="inventory services now use store-keeper email to carry put services">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/models/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/models/test_cart_modesl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/models/test_product_model.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +35,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/PRAISON-01/E-Commerce&quot;,
-    &quot;accountId&quot;: &quot;b9dfa56d-3e3b-41a2-9b0d-76166f7f8402&quot;
+    &quot;accountId&quot;: &quot;b7e0bd71-1cd4-43c2-9685-6fc95f01015a&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -112,9 +113,9 @@
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;update/minor-updates&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/aramide/Documents/E-Commerce/FRONTEND/MainApp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/gamp/PycharmProjects/E-Commerce&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -297,6 +298,7 @@
       <workItem from="1788710251382" duration="13881000" />
       <workItem from="1788738925478" duration="954000" />
       <workItem from="1788751955479" duration="8451000" />
+      <workItem from="1788792013911" duration="1134000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -386,7 +388,23 @@
       <option name="project" value="LOCAL" />
       <updated>1788739138347</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="inventory services now use store-keeper email to carry put services">
+      <option name="closed" value="true" />
+      <created>1788792063426</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1788792063426</updated>
+    </task>
+    <task id="LOCAL-00013" summary="inventory services now use store-keeper email to carry put services">
+      <option name="closed" value="true" />
+      <created>1788792113999</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1788792113999</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
