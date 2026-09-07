@@ -2,9 +2,9 @@ import pytest
 from sqlalchemy import StaticPool
 from sqlmodel import SQLModel, Session, create_engine
 
-from models.customer import Customer
-from models.product import Product
-from models.cart import Cart, CartItem
+from app.models.customer import Customer
+from app.models.product import Product
+from app.models.cart import Cart, CartItem
 class TestCartModel:
     @pytest.fixture
     def db_session(self):
@@ -51,7 +51,8 @@ class TestCartModel:
         cart_item = CartItem(
             cart_id=test_cart.id,
             product_id=test_product.id,
-            quantity=1
+            quantity=1,
+            product_price=test_product.price,
         )
 
         db_session.add(cart_item)
@@ -72,7 +73,8 @@ class TestCartModel:
         cart_item = CartItem(
             cart_id=test_cart.id,
             product_id=test_product.id,
-            quantity=2
+            quantity=2,
+            product_price=test_product.price,
         )
 
         db_session.add(cart_item)
