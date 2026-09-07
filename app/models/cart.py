@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 from uuid import UUID, uuid4
 from pydantic import BaseModel, Field
 from sqlmodel import Field as SQLField, Relationship, SQLModel
@@ -28,6 +29,7 @@ class Cart(SQLModel, table=True):
     id: UUID = SQLField(default_factory=uuid4, primary_key=True)
     customer_id: UUID = SQLField(foreign_key="customers.id")
     items: list["CartItem"] = Relationship(back_populates="cart")
+    created_at: datetime = SQLField(default_factory=lambda: datetime.now(timezone.utc))
 
 
     @property

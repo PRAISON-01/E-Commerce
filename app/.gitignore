@@ -1,9 +1,0 @@
-.idea/
-.env/
-workspace.iml/
-git add .gitignore
-git commit --amend --no-edit
-.env
-__pycache__/
-*.pyc
-app.db

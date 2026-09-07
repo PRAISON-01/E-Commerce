@@ -1,4 +1,6 @@
-from uuid import UUID
+from uuid import  UUID
+
+from pydantic import EmailStr
 
 from app.repositories.product_repository import ProductRepository
 from app.repositories.storekeeper_repository import StoreKeeperRepository
@@ -6,6 +8,7 @@ from app.models.product import Product, AddProduct, UpdateProduct
 from app.exception import AuthenticationException
 from app.exception.product_not_found_exception import ProductNotFoundException
 from app.exception.product_stock_exception import ProductStockException
+from app.models.product import Product
 
 
 class InventoryService:
@@ -13,8 +16,8 @@ class InventoryService:
         self.repository = repository
         self.user_repository = user_repository
 
-    def __validate_user_is_logged_in(self, store_keeper_id: UUID):
-        user = self.user_repository.find_by_id(store_keeper_id)
+    def __validate_user_is_logged_in(self, store_keeper_email: EmailStr):
+        user = self.user_repository.find_by_email(store_keeper_email)
         if user is None:
             raise AuthenticationException("User not found!")
 
@@ -22,7 +25,7 @@ class InventoryService:
             raise AuthenticationException(f" {user.email} not logged in!")
 
     def add_product(self, payload: AddProduct) -> Product:
-        self.__validate_user_is_logged_in(payload.store_keeper_id)
+        self.__validate_user_is_logged_in(payload.store_keeper_email)
 
         new_product = Product(
             name=payload.name,
@@ -34,9 +37,9 @@ class InventoryService:
         return self.repository.save(new_product)
 
     def restock(self, payload: UpdateProduct) -> Product:
-        self.__validate_user_is_logged_in(payload.store_keeper_id)
+        self.__validate_user_is_logged_in(payload.store_keeper_email)
 
-        if payload.quantity is None or payload.quantity <= 0:
+        if payload.quantity <= 0:
             raise ProductStockException("Invalid Quantity!!!")
 
         saved_product = self.repository.find_by_id(payload.id)
@@ -45,17 +48,16 @@ class InventoryService:
 
         saved_product.quantity += payload.quantity
 
-        if payload.name is not None:
-            saved_product.name = payload.name
-        if payload.description is not None:
-            saved_product.description = payload.description
-        if payload.price is not None:
-            saved_product.price = payload.price
+        saved_product.name = payload.name
+
+        saved_product.description = payload.description
+
+        saved_product.price = payload.price
 
         return self.repository.save(saved_product)
 
-    def dispense(self, id: UUID, store_keeper_id: UUID, quantity_to_remove: int) -> Product:
-        self.__validate_user_is_logged_in(store_keeper_id)
+    def dispense(self, id: UUID, store_keeper_email: EmailStr, quantity_to_remove: int) -> Product:
+        self.__validate_user_is_logged_in(store_keeper_email)
 
         if quantity_to_remove <= 0:
             raise ProductStockException("Invalid Quantity!!!")
@@ -69,24 +71,26 @@ class InventoryService:
 
         saved_product.quantity -= quantity_to_remove
         return self.repository.save(saved_product)
+    #
+    def delete(self, id: UUID, store_keeper_email: EmailStr):
+        self.__validate_user_is_logged_in(store_keeper_email)
+        product = self.repository.find_by_id(id)
 
-    def delete(self, product_id: UUID, store_keeper_id: UUID) -> str:
-        self.__validate_user_is_logged_in(store_keeper_id)
-        product = self.repository.find_by_id(product_id)
         if not product:
-            raise ProductNotFoundException(f"Product {product_id} not found")
-        self.repository.delete_product(product.id)
-        return product.name
+            raise ProductNotFoundException(f"Product {id} not found")
 
-    def get_product(self, id: UUID, store_keeper_id: UUID) -> Product:
-        self.__validate_user_is_logged_in(store_keeper_id)
+        self.repository.delete_product(product.id)
+
+    def get_product(self, id: UUID, store_keeper_email: EmailStr) -> Product:
+        self.__validate_user_is_logged_in(store_keeper_email)
         product = self.repository.find_by_id(id)
 
         if product is None:
             raise ProductNotFoundException(f"Product {id} not found")
 
-        return product
-
-    def get_all_products(self, store_keeper_id: UUID) -> list[Product]:
-        self.__validate_user_is_logged_in(store_keeper_id)
+        return Product.model_validate(product)
+    #
+    def get_all_products(self, store_keeper_email: EmailStr) -> list[Product]:
+        self.__validate_user_is_logged_in(store_keeper_email)
         return self.repository.find_all()
+#
