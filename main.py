@@ -40,7 +40,5 @@ app.add_middleware(
 )
 
 
-# 4. INCLUDE YOUR ROUTERS AT THE VERY BOTTOM
 app.include_router(auth_router)
 app.include_router(inventory_router)
-# app.include_router(sales_router)
