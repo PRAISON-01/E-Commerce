@@ -64,7 +64,7 @@ class TestInventoryServiceIntegration:
         product_id = uuid4()
 
         product = Product(
-            product_id=product_id,
+            id=product_id,
             name="Test Product",
             description="Test Description",
             price=5.99,
@@ -77,7 +77,7 @@ class TestInventoryServiceIntegration:
         non_existent_user_id = uuid4()
         with pytest.raises(AuthenticationException):
             service.dispense(
-                product_id=product_id,
+                product_id,
                 store_keeper_id=non_existent_user_id,
                 quantity_to_remove=3
             )
@@ -142,7 +142,7 @@ class TestInventoryServiceIntegration:
         )
 
         product = Product(
-            product_id=product_id,
+            id=product_id,
             name="Test Product",
             description="Test Description",
             price=5.99,
@@ -155,7 +155,7 @@ class TestInventoryServiceIntegration:
 
         with pytest.raises(AuthenticationException):
             service.dispense(
-                product_id=product_id,
+                product_id,
                 store_keeper_id=store_keeper_id,
                 quantity_to_remove=3,
             )
@@ -177,7 +177,7 @@ class TestInventoryServiceIntegration:
         )
 
         product = Product(
-            product_id=product_id,
+            id=product_id,
             name="Test Product",
             description="Test Description",
             price=5.99,
@@ -190,7 +190,7 @@ class TestInventoryServiceIntegration:
 
         with pytest.raises(AuthenticationException):
             service.delete(
-                product_id=product_id,
+                product_id,
                 store_keeper_id=store_keeper_id,
             )
 
@@ -212,7 +212,7 @@ class TestInventoryServiceIntegration:
         )
 
         product = Product(
-            product_id=product_id,
+            id=product_id,
             name="Test Product",
             description="Test Description",
             price=5.99,
@@ -225,7 +225,7 @@ class TestInventoryServiceIntegration:
 
         with pytest.raises(AuthenticationException):
             service.get_product(
-                product_id=product_id,
+                product_id,
                 store_keeper_id=store_keeper_id,
             )
 
@@ -401,7 +401,7 @@ class TestInventoryServiceIntegration:
         session.commit()
 
         with pytest.raises(ProductStockException):
-            service.dispense(product_id=product_id, store_keeper_id=store_keeper_id, quantity_to_remove=10)
+            service.dispense(product_id, store_keeper_id=store_keeper_id, quantity_to_remove=10)
 
     def test_that_delete_product_deletes_product(self, session, service, product_repo):
 
@@ -419,14 +419,14 @@ class TestInventoryServiceIntegration:
 
         product_id = uuid4()
         product = Product(
-            product_id=product_id,
+            id=product_id,
             name="test_name",
             description="test_description",
             price=5.99,
             quantity=3
         )
         saved = product_repo.save(product)
-        deleted_product_name = service.delete(product_id=saved.id, store_keeper_id=saved_store_keeper.id)
+        deleted_product_name = service.delete(saved.id, store_keeper_id=saved_store_keeper.id)
         assert deleted_product_name == "test_name"
         product = product_repo.find_by_id(saved.id)
         assert product is None
@@ -478,6 +478,6 @@ class TestInventoryServiceIntegration:
 
         product_repo.save(product)
 
-        found_product = service.get_product(product_id=product_id, store_keeper_id=store_keeper_id)
+        found_product = service.get_product(product_id, store_keeper_id=store_keeper_id)
         assert found_product.name == "test_name"
         assert session.get(Product, product_id).id == found_product.id
