@@ -1,7 +1,7 @@
 import uuid
 from uuid import UUID, uuid4
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, EmailStr
 from sqlmodel import SQLModel, Field as SQLField, Relationship
 
 
@@ -10,7 +10,7 @@ class AddProduct(BaseModel):
     description : str = Field(min_length=3, max_length=100)
     price : float= Field(gt=0)
     quantity : int = Field(gt=0)
-    store_keeper_id : UUID
+    store_keeper_email : EmailStr
 
 class UpdateProduct(BaseModel):
     id : UUID
@@ -18,7 +18,7 @@ class UpdateProduct(BaseModel):
     description : str = Field(..., min_length=3, max_length=100)
     price : float = Field(gt=0)
     quantity : int = Field (gt=0)
-    store_keeper_id : UUID
+    store_keeper_email : EmailStr
 
 
 class Product(SQLModel, table=True):
