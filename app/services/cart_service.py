@@ -24,7 +24,7 @@ class CartService:
 
         if existing_item is not None:
             existing_item.quantity = existing_item.quantity + payload.quantity
-            self.repository.save_item(existing_item)
+            self.repository.add_item(existing_item)
         else:
             new_item = CartItem(
                 cart_id=cart.id,
@@ -32,7 +32,7 @@ class CartService:
                 quantity=payload.quantity,
                 product_price=product.price,
             )
-            self.repository.save_item(new_item)
+            self.repository.add_item(new_item)
 
         return self.get_cart(customer_id)
 
@@ -43,7 +43,7 @@ class CartService:
 
     def remove_item(self, customer_id: UUID, cart_item_id: UUID) -> Cart:
         cart = self.repository.get_or_create_for_customer(customer_id)
-        item = self.repository.find_item_by_id(cart_item_id)
+        item = self.repository.get_item(cart_item_id)
 
         if item is None or item.cart_id != cart.id:
             raise ValueError("This item is not in your cart")
@@ -53,4 +53,4 @@ class CartService:
 
     def clear_cart(self, customer_id: UUID) -> None:
         cart = self.repository.get_or_create_for_customer(customer_id)
-        self.repository.clear(cart.id)
+        self.repository.clear_cart(cart.id)
