@@ -4,6 +4,7 @@ from uuid import UUID
 from sqlmodel import Session, select
 from app.models.cart import Cart, CartItem
 from app.models.product import Product
+from app.models.cart import CartItem
 
 
 class CartRepository:
@@ -32,7 +33,7 @@ class CartRepository:
         result = self._session.exec(statement).all()
         return list(result)
 
-    def get_item(self, cart_item_id: UUID) -> Optional[CartItem]:
+    def get_item(self, cart_item_id: UUID) -> type[CartItem] | None:
         result = self._session.get(CartItem, cart_item_id)
         return result
 
@@ -47,6 +48,13 @@ class CartRepository:
         self._session.delete(item)
         self._session.commit()
         return True
+
+    def clear_cart(self, cart_id: UUID) -> None:
+        statement = select(CartItem).where(CartItem.cart_id == cart_id)
+        items = self._session.exec(statement).all()
+        for item in items:
+            self._session.delete(item)
+        self._session.commit()
 
 
 

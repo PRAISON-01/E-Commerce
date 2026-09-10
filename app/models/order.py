@@ -23,7 +23,7 @@ class CreateOrderItem(BaseModel):
 
 class CreateOrder(BaseModel):
     customer_id: UUID
-    items: List[CreateOrderItem]
+    cart_id : UUID
 
 
 class Order(SQLModel, table=True):
@@ -58,7 +58,7 @@ class OrderItemResponse(BaseModel):
 
 class OrderResponse(BaseModel):
     id: UUID
-    customers_id: UUID
+    customer_id: UUID
     order_date: datetime
     total_amount: float
     status: OrderStatus

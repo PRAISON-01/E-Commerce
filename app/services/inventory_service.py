@@ -9,6 +9,7 @@ from app.exception import AuthenticationException
 from app.exception.product_not_found_exception import ProductNotFoundException
 from app.exception.product_stock_exception import ProductStockException
 from app.models.product import Product
+from app.models.cart import CartItem
 
 
 class InventoryService:
@@ -56,22 +57,30 @@ class InventoryService:
 
         return self.repository.save(saved_product)
 
-    def dispense(self, id: UUID, store_keeper_email: EmailStr, quantity_to_remove: int) -> Product:
-        self.__validate_user_is_logged_in(store_keeper_email)
+    def dispense(self, cart_items ) -> float:
+        # self.__validate_user_is_logged_in(store_keeper_email)
 
-        if quantity_to_remove <= 0:
-            raise ProductStockException("Invalid Quantity!!!")
 
-        saved_product = self.repository.find_by_id(id)
-        if saved_product is None:
-            raise ProductNotFoundException(f"Product {id} not found")
+        total_amount = 0.0
+        for item in cart_items:
 
-        if saved_product.quantity < quantity_to_remove:
-            raise ProductStockException("Not enough stock available!!!")
+            clean_id_str = str(item.product_id).replace("-", "")
 
-        saved_product.quantity -= quantity_to_remove
-        return self.repository.save(saved_product)
-    #
+            product = self.repository.find_by_id(UUID(clean_id_str))
+
+            if product is None:
+                raise ProductNotFoundException(f"Product {clean_id_str} does not exist oh!!!!!!")
+
+            if product.quantity < item.quantity:
+                raise ProductStockException(f"{product.name} is not enough stock!!")
+
+            product.quantity -= item.quantity
+            self.repository.save(product)
+
+            total_amount += item.quantity * product.price
+
+        return total_amount
+
     def delete(self, id: UUID, store_keeper_email: EmailStr):
         self.__validate_user_is_logged_in(store_keeper_email)
         product = self.repository.find_by_id(id)
@@ -89,8 +98,8 @@ class InventoryService:
             raise ProductNotFoundException(f"Product {id} not found")
 
         return Product.model_validate(product)
-    #
+
     def get_all_products(self, store_keeper_email: EmailStr) -> list[Product]:
         self.__validate_user_is_logged_in(store_keeper_email)
         return self.repository.find_all()
-#
+
