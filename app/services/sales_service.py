@@ -7,6 +7,7 @@ from app.repositories.cart_repository import CartRepository
 from app.repositories.product_repository import ProductRepository
 from app.services.inventory_service import InventoryService
 from app.models.product import Product
+from app.models.order import Order
 
 
 class OrderService:
@@ -24,7 +25,10 @@ class OrderService:
             raise ValueError("Cannot check out an empty cart")
 
         total = self.inventory_service.dispense(cart_items)
-        order = Order(customer_id=payload.customer_id, total_amount=total, status=OrderStatus.PENDING)
+        order = Order(
+            customer_id=payload.customer_id,
+            total_amount=total,
+            status=OrderStatus.PENDING)
 
         order_items = []
         for item in cart_items:
@@ -50,9 +54,8 @@ class OrderService:
             raise ValueError("You do not own this order")
         return OrderResponse.model_validate(order)
 
-    def list_orders(self, customer_id: UUID) -> List[OrderResponse]:
-        orders = self.repository.list_for_customer(customer_id)
-        return [OrderResponse.model_validate(item) for item in orders]
+    def list_orders(self, customer_id: UUID) -> list[Order]:
+        return self.repository.list_for_customer(customer_id)
 
     def cancel_order(self, customer_id: UUID, order_id: UUID) -> OrderResponse:
         order = self.repository.get(order_id)
