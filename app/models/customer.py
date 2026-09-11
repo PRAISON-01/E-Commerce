@@ -7,13 +7,13 @@ from sqlmodel import SQLModel, Field as SQLField
 class Customer(SQLModel, table=True):
     __tablename__ = "customers"
     id:  UUID= SQLField(default_factory=uuid4, primary_key=True)
-    name: str= Field(min_length=3, max_length=20)
+    name: str= Field(min_length=3, max_length=100)
     email:EmailStr = SQLField(unique=True, index=True)
     password: str = Field(..., min_length=8, max_length=20)
     is_logged_in: bool = SQLField(default=False)
 
 class RegisterCustomer(BaseModel):
-    name: str = Field(..., min_length=3, max_length=20)
+    name: str = Field(..., min_length=3, max_length=100)
     email: EmailStr
     password: str = Field(..., min_length = 8, max_length = 20)
 

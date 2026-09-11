@@ -21,6 +21,10 @@ class CartRepository:
             self._session.refresh(cart)
         return cart
 
+    def find_cart_by_id(self, customer_id : UUID):
+        statement = select(Cart).where(Cart.customer_id == customer_id)
+        return self._session.exec(statement).first()
+
 
     def add_item(self, item: CartItem) -> CartItem:
         self._session.add(item)
@@ -55,6 +59,3 @@ class CartRepository:
         for item in items:
             self._session.delete(item)
         self._session.commit()
-
-
-

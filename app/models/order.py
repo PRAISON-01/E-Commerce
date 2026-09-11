@@ -47,6 +47,10 @@ class OrderItem(SQLModel, table=True):
     price_purchased: float
     order: Order = Relationship(back_populates="items")
 
+    @property
+    def subtotal(self) -> float:
+        return self.quantity * self.price_purchased
+
 class OrderItemResponse(BaseModel):
     id: UUID
     product_id: UUID

@@ -52,5 +52,5 @@ class CartService:
         return self.get_cart(customer_id)
 
     def clear_cart(self, customer_id: UUID) -> None:
-        cart = self.repository.get_or_create_for_customer(customer_id)
+        cart = self.repository.find_cart_by_id(customer_id)
         self.repository.clear_cart(cart.id)

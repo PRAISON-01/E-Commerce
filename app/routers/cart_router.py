@@ -42,7 +42,7 @@ def get_cart(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e))
 
 
-@router.delete("/remove_cart", status_code=status.HTTP_204_NO_CONTENT)
+@router.delete("/clear_items_from_cart", status_code=status.HTTP_204_NO_CONTENT)
 def remove_cart(
         customer_id : UUID,
         cart_id : UUID,

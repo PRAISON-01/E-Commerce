@@ -8,7 +8,7 @@ from app.config.dependencies import get_session
 from app.repositories.order_repository import OrderRepository
 from app.repositories.product_repository import ProductRepository
 from app.repositories.cart_repository import CartRepository
-from app.models.order import CreateOrder, OrderResponse
+from app.models.order import CreateOrder, OrderResponse, Order
 from app.services.sales_service import OrderService
 from app.repositories import product_repository, storekeeper_repository
 from app.repositories.storekeeper_repository import StoreKeeperRepository
@@ -48,7 +48,7 @@ def get_order(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e))
 
 
-@router.get("/customers/{customer_id}/orders", response_model=List[OrderResponse])
+@router.get("/customers/{customer_id}/orders", response_model=List[Order])
 def list_customer_orders(customer_id: UUID, sales_service: OrderService = Depends(get_sales_service)):
     return sales_service.list_orders(customer_id)
 
